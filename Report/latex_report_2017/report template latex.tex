@@ -1,0 +1,103 @@
+\documentclass[10pt,a4paper]{article}
+\usepackage[latin1]{inputenc}
+\usepackage{graphicx,epsfig,palatino}
+\usepackage[reqno,centertags]{amsmath}
+\usepackage{tikz}
+\usepackage{pgfplots}  
+\usepackage{fancybox}
+\usepackage{amsmath}
+\usepackage[margin=1.2in]{geometry}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{4mm}
+\graphicspath{{./figures/}}
+\newcommand{\figuretikz}[3]{\pgfplotsset{width=#1\columnwidth,height=#1\columnwidth,compat=newest,plot coordinates/math parser=false}\input{#1}}
+\newcommand{\tm}{\texttrademark}
+\newcommand{\minbox}{\fbox{\rule{2mm}{0mm} \rule{0mm}{2mm}} }
+\flushbottom
+
+
+\begin{document}
+\begin{titlepage}
+%%%%%%%%%%%%%%%%%WRITE NAMES AND PERSONAL IDENTITY NUMBERS WHERE SPECIFIED IN FILE grade_template_to_include_eng.tex%%%%%%%%%%
+\input{grade_template}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\end{titlepage}
+\newpage
+\pagestyle{plain}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Preparation task}
+This section should include:
+\begin{itemize}
+    \item derivation of a physical model of the magnetic levitator in state-space form.
+    \item suggestion for a suitable model order for a linear model (based on a linearization of the model)
+    \item motivation for suggested model order.
+    \item \textsc{Matlab} codes for the required functions.
+    \item one plot for the spectrum of the binary random signal for the required values of $\alpha$.
+\end{itemize}
+Hint: This section should fit in 1-2 pages. You don't need to explain theory here.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Working region}
+This section should include:
+\begin{itemize}
+    \item chosen working region.
+    \item motivation for working region.
+    \item plot illustrating working region, for example as shown in Fig.~\ref{fig:workingRegion}. (Always reference all figures in the text and use captions.)
+\end{itemize}
+%
+\begin{figure}[t]
+\footnotesize
+\centering 
+\def\svgwidth{.8\columnwidth}
+\input{figures/maglev_working.pdf_tex} 
+\caption{Example of how to choose the working region.}
+\label{fig:workingRegion}
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Sampling time}
+This section should include:
+\begin{itemize}
+    \item sampling time.
+    \item motivation for sampling time.
+    \item plot of step responses yielding sampling time.
+\end{itemize}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Input signals}
+This section should include:
+\begin{itemize}
+    \item characteristics of chosen input signals.
+    \item motivation for chosen input signals.
+\end{itemize}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Estimation and validation data}
+This section should include:
+\begin{itemize}
+    \item information about the amount of data used for identification and validation.
+\end{itemize}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Models}
+This section should include:
+\begin{itemize}
+    \item descriptions of model structures used. (You should use more than one structure.)
+    \item motivation for choice of model order for each model structure.
+    \item plots of Bode diagrams, poles and zeros.
+    \item analysis/interpretations of plots.
+   \item validation performed with simulation (\texttt{compare} with \texttt{M=inf}) and correlation analysis (\texttt{resid}).
+   \item analysis/interpretations of validation and correlation analysis.
+   \item a comparison between the accuracy of models obtained with different input signals (binary random signals v/s uniformly distributed white noise)
+   \item  a ranking of estimated models with respect to how well they describe the process, along with a rigorous motivation of chosen ranking. (Compare the analysis of plots, validation and correlation analysis for the different models.)
+\end{itemize}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+{\bf Note that the report is not in the format of a conference or journal paper. However, the language should be correct, concise and understandable. The figures should be clear, have captions, labels and be referenced in the text. All equations should be punctuated appropriately. (Equations are considered as part of sentences and should be treated accordingly.) All introduced symbols must be defined.}
+\end{document}

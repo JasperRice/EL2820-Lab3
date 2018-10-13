@@ -1,0 +1,70 @@
+%% Creator: Inkscape 0.91_64bit, www.inkscape.org
+%% PDF/EPS/PS + LaTeX output extension by Johan Engelen, 2010
+%% Accompanies image file 'maglev_working.pdf' (pdf, eps, ps)
+%%
+%% To include the image in your LaTeX document, write
+%%   \input{<filename>.pdf_tex}
+%%  instead of
+%%   \includegraphics{<filename>.pdf}
+%% To scale the image, write
+%%   \def\svgwidth{<desired width>}
+%%   \input{<filename>.pdf_tex}
+%%  instead of
+%%   \includegraphics[width=<desired width>]{<filename>.pdf}
+%%
+%% Images with a different path to the parent latex file can
+%% be accessed with the `import' package (which may need to be
+%% installed) using
+%%   \usepackage{import}
+%% in the preamble, and then including the image with
+%%   \import{<path to file>}{<filename>.pdf_tex}
+%% Alternatively, one can specify
+%%   \graphicspath{{<path to file>/}}
+%% 
+%% For more information, please see info/svg-inkscape on CTAN:
+%%   http://tug.ctan.org/tex-archive/info/svg-inkscape
+%%
+\begingroup%
+  \makeatletter%
+  \providecommand\color[2][]{%
+    \errmessage{(Inkscape) Color is used for the text in Inkscape, but the package 'color.sty' is not loaded}%
+    \renewcommand\color[2][]{}%
+  }%
+  \providecommand\transparent[1]{%
+    \errmessage{(Inkscape) Transparency is used (non-zero) for the text in Inkscape, but the package 'transparent.sty' is not loaded}%
+    \renewcommand\transparent[1]{}%
+  }%
+  \providecommand\rotatebox[2]{#2}%
+  \ifx\svgwidth\undefined%
+    \setlength{\unitlength}{172.60016734bp}%
+    \ifx\svgscale\undefined%
+      \relax%
+    \else%
+      \setlength{\unitlength}{\unitlength * \real{\svgscale}}%
+    \fi%
+  \else%
+    \setlength{\unitlength}{\svgwidth}%
+  \fi%
+  \global\let\svgwidth\undefined%
+  \global\let\svgscale\undefined%
+  \makeatother%
+  \begin{picture}(1,0.40118015)%
+    \put(0,0){\includegraphics[width=\unitlength,page=1]{maglev_working.pdf}}%
+    \put(0.32982149,0.40192132){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{}}}%
+    \put(-0.38860188,0.72637063){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\begin{minipage}{1.52954652\unitlength}\raggedright \end{minipage}}}%
+    \put(0.16296201,0.39728626){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=2]{maglev_working.pdf}}%
+    \put(0.37924011,0.00273278){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{Input signal amplitudes (set $\{\bar{u}_i\}$)}}}%
+    \put(0.00880378,0.0483255){\color[rgb]{0,0,0}\rotatebox{90}{\makebox(0,0)[lb]{\smash{Avergaed output signal (set $\{\bar{y}_i\}$)}}}}%
+    \put(0.31994339,0.33954402){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{Working Region}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=3]{maglev_working.pdf}}%
+    \put(0.50068368,0.02205099){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{$u^\star$}}}%
+    \put(0.24557255,0.02097457){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{$u_\text{min}$}}}%
+    \put(0.71411612,0.02295697){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{$u_\text{max}$}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=4]{maglev_working.pdf}}%
+    \put(0.77526388,0.11342735){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{Data point $(\bar{u}_i,\bar{y}_i)$}}}%
+   % \put(0,0){\includegraphics[width=\unitlength,page=5]{maglev_working.pdf}}%
+    \put(0.03197038,0.02263037){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{$\check{u}$}}}%
+    \put(0.9867782,0.02378911){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{$\hat{u}$}}}%
+  \end{picture}%
+\endgroup%
