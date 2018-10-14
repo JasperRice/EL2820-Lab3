@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/W32TeX) (preloaded format=pdflatex 2016.11.21)  14 OCT 2018 16:36
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/W32TeX) (preloaded format=pdflatex 2016.11.21)  14 OCT 2018 16:54
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -720,11 +720,11 @@ LaTeX Font Info:    Font shape `OMS/ppl/m/n' in size <10> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 46.
  [1]
 Package epstopdf Info: Source file: <workingRegion.eps>
-(epstopdf)                    date: 2018-10-14 16:29:38
-(epstopdf)                    size: 21941 bytes
+(epstopdf)                    date: 2018-10-14 16:42:38
+(epstopdf)                    size: 21944 bytes
 (epstopdf)             Output file: <workingRegion-eps-converted-to.pdf>
-(epstopdf)                    date: 2018-10-14 16:32:21
-(epstopdf)                    size: 7278 bytes
+(epstopdf)                    date: 2018-10-14 16:51:14
+(epstopdf)                    size: 7355 bytes
 (epstopdf)             Command: <repstopdf --outfile=workingRegion-eps-converte
 d-to.pdf workingRegion.eps>
 (epstopdf)             \includegraphics on input line 82.
@@ -828,7 +828,7 @@ texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb><c:/texlive/20
 16/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb><c:/texlive/2016/texmf-dist/fo
 nts/type1/urw/palatino/uplb8a.pfb><c:/texlive/2016/texmf-dist/fonts/type1/urw/p
 alatino/uplr8a.pfb>
-Output written on "report template latex.pdf" (6 pages, 202568 bytes).
+Output written on "report template latex.pdf" (6 pages, 202642 bytes).
 PDF statistics:
  111 PDF objects out of 1000 (max. 8388607)
  78 compressed objects within 1 object stream
