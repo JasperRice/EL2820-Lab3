@@ -45,4 +45,4 @@ averagedY = getStationaryAverages(y, (10/stairHeight+1), 0.6);
 figure
 plot(averagedU,averagedY);
 xlabel('Input (A)')
-ylabel('Output (m)')
+ylabel('Output (cm)')

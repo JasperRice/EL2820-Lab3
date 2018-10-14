@@ -24,7 +24,7 @@
 % MATLAB code settings
 \lstset{extendedchars=false, % Shutdown no-ASCII compatible
 basicstyle=\normalsize\tt, % the size of the fonts that are used for the code
-language=Matlab, tabsize=4, numbers=left, numberstyle=\small, stepnumber=1, numbersep=5pt, keywordstyle=\color[rgb]{0,0,1}, commentstyle=\color[rgb]{0.133,0.545,0.133}, stringstyle=\color[rgb]{0.627,0.126,0.941}, backgroundcolor=\color{white}, showspaces=false, showstringspaces=false, showtabs=false, frame=single, captionpos=t, breaklines=true, breakatwhitespace=false, morekeywords={break, case, catch, continue, elseif, else, end, for, function, global, if, otherwise, persistent, return, switch, try, while}, title=\lstname,
+language=Matlab, tabsize=4, numbers=left, numberstyle=\small, stepnumber=1, numbersep=8pt, keywordstyle=\color[rgb]{0,0,1}, commentstyle=\color[rgb]{0.133,0.545,0.133}, stringstyle=\color[rgb]{0.627,0.126,0.941}, backgroundcolor=\color{white}, showspaces=false, showstringspaces=false, showtabs=false, frame=single, captionpos=t, breaklines=true, breakatwhitespace=false, morekeywords={break, case, catch, continue, elseif, else, end, for, function, global, if, otherwise, persistent, return, switch, try, while}, title=\lstname,
 mathescape=true,escapechar=? % escape to latex with ?..?  
 escapeinside={\%*}{*)}, % if you want to add a comment within your code  
 %morestring=[m]', % strings
@@ -75,16 +75,24 @@ This section should include:
     \item chosen working region.
     \item motivation for working region.
     \item plot illustrating working region, for example as shown in Fig.~\ref{fig:workingRegion}. (Always reference all figures in the text and use captions.)
+    \begin{figure}[ht]
+		\footnotesize
+		\centering 
+		%\def\svgwidth{.8\columnwidth}
+		\includegraphics[width=\columnwidth]{workingRegion.eps} 
+		\caption{Working region.}
+		\label{fig:workingRegion}
+	\end{figure}
 \end{itemize}
 %
 \begin{figure}[ht]
-\footnotesize
-\centering 
-\def\svgwidth{.8\columnwidth}
-\input{figures/maglev_working.pdf_tex} 
-\caption{Example of how to choose the working region.}
-\label{fig:workingRegion}
-\end{figure}
+	\footnotesize
+	\centering 
+	\def\svgwidth{.8\columnwidth}
+	\input{figures/maglev_working.pdf_tex} 
+	\caption{Example of how to choose the working region.}
+	\label{fig:workingRegion}
+	\end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
