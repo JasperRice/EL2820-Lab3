@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/W32TeX) (preloaded format=pdflatex 2016.11.21)  14 OCT 2018 15:10
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/W32TeX) (preloaded format=pdflatex 2016.11.21)  14 OCT 2018 15:21
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -577,19 +577,19 @@ File: lstlang1.sty 2015/06/04 1.6 listings language file
 (./report template latex.aux)
 \openout1 = `"report template latex.aux"'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 35.
-LaTeX Font Info:    ... okay on input line 35.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 35.
-LaTeX Font Info:    ... okay on input line 35.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 35.
-LaTeX Font Info:    ... okay on input line 35.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 35.
-LaTeX Font Info:    ... okay on input line 35.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 35.
-LaTeX Font Info:    ... okay on input line 35.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 35.
-LaTeX Font Info:    ... okay on input line 35.
-LaTeX Font Info:    Try loading font information for OT1+ppl on input line 35.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 34.
+LaTeX Font Info:    ... okay on input line 34.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 34.
+LaTeX Font Info:    ... okay on input line 34.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 34.
+LaTeX Font Info:    ... okay on input line 34.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 34.
+LaTeX Font Info:    ... okay on input line 34.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 34.
+LaTeX Font Info:    ... okay on input line 34.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 34.
+LaTeX Font Info:    ... okay on input line 34.
+LaTeX Font Info:    Try loading font information for OT1+ppl on input line 34.
 
 (c:/texlive/2016/texmf-dist/tex/latex/psnfss/ot1ppl.fd
 File: ot1ppl.fd 2001/06/04 font definitions for OT1/ppl.
@@ -658,7 +658,7 @@ ABD: EveryShipout initializing macros
 Package pgfplots Warning: running in backwards compatibility mode (unsuitable t
 ick labels; missing features). Consider writing \pgfplotsset{compat=1.14} into 
 your preamble.
- on input line 35.
+ on input line 34.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -708,21 +708,16 @@ Overfull \hbox (46.19594pt too wide) in paragraph at lines 16--78
 ) [1
 
 {c:/texlive/2016/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-LaTeX Font Info:    Try loading font information for OMS+ppl on input line 48.
+LaTeX Font Info:    Try loading font information for OMS+ppl on input line 46.
 
 (c:/texlive/2016/texmf-dist/tex/latex/psnfss/omsppl.fd
 File: omsppl.fd 
 )
 LaTeX Font Info:    Font shape `OMS/ppl/m/n' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 48.
-LaTeX Font Info:    Try loading font information for OT1+pcr on input line 68.
-
-(c:/texlive/2016/texmf-dist/tex/latex/psnfss/ot1pcr.fd
-File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
-)
-(./generateBinarySignal.m [1]) (./getAverage.m) (./getStationaryAverages.m)
-(./findWorkingRegion.m [2]) (./figures/maglev_working.pdf_tex
-<./figures/maglev_working.pdf, id=29, page=1, 173.24742pt x 69.50342pt>
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 46.
+ [1]
+(./figures/maglev_working.pdf_tex
+<./figures/maglev_working.pdf, id=25, page=1, 173.24742pt x 69.50342pt>
 File: ./figures/maglev_working.pdf Graphic file (type pdf)
 
 <use ./figures/maglev_working.pdf, page 1>
@@ -730,7 +725,7 @@ Package pdftex.def Info: ./figures/maglev_working.pdf, page1 used on input line
  52.
 (pdftex.def)             Requested size: 339.24956pt x 136.12181pt.
 
-<./figures/maglev_working.pdf, id=30, page=2, 173.24742pt x 69.50342pt>
+<./figures/maglev_working.pdf, id=26, page=2, 173.24742pt x 69.50342pt>
 File: ./figures/maglev_working.pdf Graphic file (type pdf)
 
 <use ./figures/maglev_working.pdf, page 2>
@@ -738,7 +733,7 @@ Package pdftex.def Info: ./figures/maglev_working.pdf, page2 used on input line
  56.
 (pdftex.def)             Requested size: 339.24956pt x 136.12181pt.
 
-<./figures/maglev_working.pdf, id=31, page=3, 173.24742pt x 69.50342pt>
+<./figures/maglev_working.pdf, id=27, page=3, 173.24742pt x 69.50342pt>
 File: ./figures/maglev_working.pdf Graphic file (type pdf)
 
 <use ./figures/maglev_working.pdf, page 3>
@@ -746,21 +741,14 @@ Package pdftex.def Info: ./figures/maglev_working.pdf, page3 used on input line
  60.
 (pdftex.def)             Requested size: 339.24956pt x 136.12181pt.
 
-<./figures/maglev_working.pdf, id=32, page=4, 173.24742pt x 69.50342pt>
+<./figures/maglev_working.pdf, id=28, page=4, 173.24742pt x 69.50342pt>
 File: ./figures/maglev_working.pdf Graphic file (type pdf)
 
 <use ./figures/maglev_working.pdf, page 4>
 Package pdftex.def Info: ./figures/maglev_working.pdf, page4 used on input line
  64.
 (pdftex.def)             Requested size: 339.24956pt x 136.12181pt.
-) [3]
-Overfull \hbox (18.4161pt too wide) in paragraph at lines 131--132
-[]\OT1/ppl/m/n/10 validation per-formed with sim-u-la-tion (\OT1/pcr/m/n/10 com
-pare \OT1/ppl/m/n/10 with \OT1/pcr/m/n/10 M=inf\OT1/ppl/m/n/10 ) and cor-re-la-
-tion anal-y-sis (\OT1/pcr/m/n/10 resid\OT1/ppl/m/n/10 ). 
- []
-
-[4 <./figures/maglev_working.pdf> <./figures/maglev_working.pdf
+) [2 <./figures/maglev_working.pdf> <./figures/maglev_working.pdf
 
 pdfTeX warning: pdflatex.exe (file ./figures/maglev_working.pdf): PDF inclusion
 : multiple pdfs with page group included in a single page
@@ -773,17 +761,30 @@ pdfTeX warning: pdflatex.exe (file ./figures/maglev_working.pdf): PDF inclusion
 pdfTeX warning: pdflatex.exe (file ./figures/maglev_working.pdf): PDF inclusion
 : multiple pdfs with page group included in a single page
 >]
+LaTeX Font Info:    Try loading font information for OT1+pcr on input line 125.
+
+ (c:/texlive/2016/texmf-dist/tex/latex/psnfss/ot1pcr.fd
+File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
+)
+Overfull \hbox (18.4161pt too wide) in paragraph at lines 125--126
+[]\OT1/ppl/m/n/10 validation per-formed with sim-u-la-tion (\OT1/pcr/m/n/10 com
+pare \OT1/ppl/m/n/10 with \OT1/pcr/m/n/10 M=inf\OT1/ppl/m/n/10 ) and cor-re-la-
+tion anal-y-sis (\OT1/pcr/m/n/10 resid\OT1/ppl/m/n/10 ). 
+ []
+
+[3] (./generateBinarySignal.m) (./getAverage.m) (./getStationaryAverages.m)
+(./findWorkingRegion.m [4])
 LaTeX Font Info:    Font shape `OT1/ppl/bx/n' in size <10> not available
-(Font)              Font shape `OT1/ppl/b/n' tried instead on input line 138.
+(Font)              Font shape `OT1/ppl/b/n' tried instead on input line 141.
  [5] (./report template latex.aux) ) 
 Here is how much of TeX's memory you used:
  24461 strings out of 493013
  602942 string characters out of 6136992
- 881851 words of memory out of 5000000
+ 879851 words of memory out of 5000000
  27567 multiletter control sequences out of 15000+600000
  16705 words of font info for 47 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 62i,16n,96p,742b,1481s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 62i,16n,96p,742b,1148s stack positions out of 5000i,500n,10000p,200000b,80000s
 {c:/texlive/2016/texmf-dist/fonts/enc/dvips
 /base/8r.enc}<c:/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.
 pfb><c:/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><c:/t
@@ -801,7 +802,7 @@ onts/type1/public/amsfonts/cm/cmsy7.pfb><c:/texlive/2016/texmf-dist/fonts/type1
 sfonts/cm/cmsy9.pfb><c:/texlive/2016/texmf-dist/fonts/type1/urw/courier/ucrr8a.
 pfb><c:/texlive/2016/texmf-dist/fonts/type1/urw/palatino/uplb8a.pfb><c:/texlive
 /2016/texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb>
-Output written on "report template latex.pdf" (6 pages, 198224 bytes).
+Output written on "report template latex.pdf" (6 pages, 197978 bytes).
 PDF statistics:
  105 PDF objects out of 1000 (max. 8388607)
  74 compressed objects within 1 object stream

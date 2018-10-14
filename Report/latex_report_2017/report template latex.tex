@@ -24,8 +24,7 @@
 % MATLAB code settings
 \lstset{extendedchars=false, % Shutdown no-ASCII compatible
 basicstyle=\normalsize\tt, % the size of the fonts that are used for the code
-language=Matlab, tabsize=4, numbers=left, numberstyle=\small, stepnumber=1, numbersep=5pt, keywordstyle=\color[rgb]{0,0,1}, commentstyle=\color[rgb]{0.133,0.545,0.133}, stringstyle=\color[rgb]{0.627,0.126,0.941}, backgroundcolor=\color{white}, showspaces=false, showstringspaces=false, showtabs=false, frame=single, captionpos=t, breaklines=true, breakatwhitespace=false, morekeywords={break, case, catch, continue, elseif, else, end, for, function, global, if, otherwise, persistent, return, switch, try, while}, 
-title=\lstname, % show the filename of files included with \lstinputlisting;
+language=Matlab, tabsize=4, numbers=left, numberstyle=\small, stepnumber=1, numbersep=5pt, keywordstyle=\color[rgb]{0,0,1}, commentstyle=\color[rgb]{0.133,0.545,0.133}, stringstyle=\color[rgb]{0.627,0.126,0.941}, backgroundcolor=\color{white}, showspaces=false, showstringspaces=false, showtabs=false, frame=single, captionpos=t, breaklines=true, breakatwhitespace=false, morekeywords={break, case, catch, continue, elseif, else, end, for, function, global, if, otherwise, persistent, return, switch, try, while}, title=\lstname,
 mathescape=true,escapechar=? % escape to latex with ?..?  
 escapeinside={\%*}{*)}, % if you want to add a comment within your code  
 %morestring=[m]', % strings
@@ -43,9 +42,8 @@ escapeinside={\%*}{*)}, % if you want to add a comment within your code
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Preparation task}
-This section should include:
 \begin{itemize}
-    \item derivation of a physical model of the magnetic levitator in state-space form.
+    \item Derivation of a physical model of the magnetic levitator in state-space form.
 	\begin{align*}
 		m \ddot{z} &= r \dot{z} + E_{r} - F_{ul} - mg \\
 		m \ddot{y} &= r \dot{y} - E_{a} + F_{lu} - mg \\
@@ -65,10 +63,6 @@ This section should include:
     \item suggestion for a suitable model order for a linear model (based on a linearization of the model)
     \item motivation for suggested model order.
     \item \textsc{Matlab} codes for the required functions.
-    \lstinputlisting{generateBinarySignal.m}
-	\lstinputlisting{getAverage.m}
-	\lstinputlisting{getStationaryAverages.m}
-	\lstinputlisting{findWorkingRegion.m}
     \item one plot for the spectrum of the binary random signal for the required values of $\alpha$.
 \end{itemize}
 Hint: This section should fit in 1-2 pages. You don't need to explain theory here.
@@ -133,6 +127,15 @@ This section should include:
    \item a comparison between the accuracy of models obtained with different input signals (binary random signals v/s uniformly distributed white noise)
    \item  a ranking of estimated models with respect to how well they describe the process, along with a rigorous motivation of chosen ranking. (Compare the analysis of plots, validation and correlation analysis for the different models.)
 \end{itemize}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section*{Attachments}
+    \lstinputlisting{generateBinarySignal.m}
+	\lstinputlisting{getAverage.m}
+	\lstinputlisting{getStationaryAverages.m}
+	\lstinputlisting{findWorkingRegion.m}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 {\bf Note that the report is not in the format of a conference or journal paper. However, the language should be correct, concise and understandable. The figures should be clear, have captions, labels and be referenced in the text. All equations should be punctuated appropriately. (Equations are considered as part of sentences and should be treated accordingly.) All introduced symbols must be defined.}
