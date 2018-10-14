@@ -22,35 +22,14 @@
 %%%%%
 
 % MATLAB code settings
-\lstset{
-extendedchars=false, % Shutdown no-ASCII compatible
-language=Matlab, % choose the language of the code  
+\lstset{extendedchars=false, % Shutdown no-ASCII compatible
 basicstyle=\normalsize\tt, % the size of the fonts that are used for the code
-tabsize=4, % sets default tabsize to 4 spaces
-numbers=left, % where to put the line-numbers
-numberstyle=\small, % the size of the fonts that are used for the line-numbers
-stepnumber=1, % the step between two line-numbers
-numbersep=5pt, % how far the line-numbers are from the code
-keywordstyle=\color[rgb]{0,0,1}, % keywords  
-commentstyle=\color[rgb]{0.133,0.545,0.133}, % comments  
-stringstyle=\color[rgb]{0.627,0.126,0.941}, % strings  
-backgroundcolor=\color{white}, % choose the background color. You must add \usepackage{color}  
-showspaces=false, % show spaces adding particular underscores  
-showstringspaces=false, % underline spaces within strings  
-showtabs=false, % show tabs within strings adding particular underscores  
-frame=single, % adds a frame around the code  
-captionpos=b, % sets the caption-position to bottom  
-breaklines=true, % sets automatic line breaking  
-breakatwhitespace=false, % sets if automatic breaks should only happen at whitespace  
+language=Matlab, tabsize=4, numbers=left, numberstyle=\small, stepnumber=1, numbersep=5pt, keywordstyle=\color[rgb]{0,0,1}, commentstyle=\color[rgb]{0.133,0.545,0.133}, stringstyle=\color[rgb]{0.627,0.126,0.941}, backgroundcolor=\color{white}, showspaces=false, showstringspaces=false, showtabs=false, frame=single, captionpos=t, breaklines=true, breakatwhitespace=false, morekeywords={break, case, catch, continue, elseif, else, end, for, function, global, if, otherwise, persistent, return, switch, try, while}, 
 title=\lstname, % show the filename of files included with \lstinputlisting;
-% also try caption instead of title  
 mathescape=true,escapechar=? % escape to latex with ?..?  
 escapeinside={\%*}{*)}, % if you want to add a comment within your code  
-%columns=fixed, % nice spacing  
-%morestring=[m]', % strings  
-%morekeywords={%,...}, % if you want to add more keywords to the set  
-%    break,case,catch,continue,elseif,else,end,for,function,global,%  
-%    if,otherwise,persistent,return,switch,try,while,...},%  
+%morestring=[m]', % strings
+%columns=fixed, % nice spacing
 }
 
 \begin{document}
@@ -86,6 +65,10 @@ This section should include:
     \item suggestion for a suitable model order for a linear model (based on a linearization of the model)
     \item motivation for suggested model order.
     \item \textsc{Matlab} codes for the required functions.
+    \lstinputlisting{generateBinarySignal.m}
+	\lstinputlisting{getAverage.m}
+	\lstinputlisting{getStationaryAverages.m}
+	\lstinputlisting{findWorkingRegion.m}
     \item one plot for the spectrum of the binary random signal for the required values of $\alpha$.
 \end{itemize}
 Hint: This section should fit in 1-2 pages. You don't need to explain theory here.
@@ -100,7 +83,7 @@ This section should include:
     \item plot illustrating working region, for example as shown in Fig.~\ref{fig:workingRegion}. (Always reference all figures in the text and use captions.)
 \end{itemize}
 %
-\begin{figure}[t]
+\begin{figure}[ht]
 \footnotesize
 \centering 
 \def\svgwidth{.8\columnwidth}
