@@ -15,12 +15,49 @@
 \newcommand{\minbox}{\fbox{\rule{2mm}{0mm} \rule{0mm}{2mm}} }
 \flushbottom
 
+%%%%% My packages
+\usepackage{listings}
+\usepackage{color, xcolor}
+%\usepackage{amsmath,mathtools,amssymb,amsfonts,dsfont,cancel} %Math Package
+%%%%%
+
+% MATLAB code settings
+\lstset{
+extendedchars=false, % Shutdown no-ASCII compatible
+language=Matlab, % choose the language of the code  
+basicstyle=\normalsize\tt, % the size of the fonts that are used for the code
+tabsize=4, % sets default tabsize to 4 spaces
+numbers=left, % where to put the line-numbers
+numberstyle=\small, % the size of the fonts that are used for the line-numbers
+stepnumber=1, % the step between two line-numbers
+numbersep=5pt, % how far the line-numbers are from the code
+keywordstyle=\color[rgb]{0,0,1}, % keywords  
+commentstyle=\color[rgb]{0.133,0.545,0.133}, % comments  
+stringstyle=\color[rgb]{0.627,0.126,0.941}, % strings  
+backgroundcolor=\color{white}, % choose the background color. You must add \usepackage{color}  
+showspaces=false, % show spaces adding particular underscores  
+showstringspaces=false, % underline spaces within strings  
+showtabs=false, % show tabs within strings adding particular underscores  
+frame=single, % adds a frame around the code  
+captionpos=b, % sets the caption-position to bottom  
+breaklines=true, % sets automatic line breaking  
+breakatwhitespace=false, % sets if automatic breaks should only happen at whitespace  
+title=\lstname, % show the filename of files included with \lstinputlisting;
+% also try caption instead of title  
+mathescape=true,escapechar=? % escape to latex with ?..?  
+escapeinside={\%*}{*)}, % if you want to add a comment within your code  
+%columns=fixed, % nice spacing  
+%morestring=[m]', % strings  
+%morekeywords={%,...}, % if you want to add more keywords to the set  
+%    break,case,catch,continue,elseif,else,end,for,function,global,%  
+%    if,otherwise,persistent,return,switch,try,while,...},%  
+}
 
 \begin{document}
 \begin{titlepage}
 %%%%%%%%%%%%%%%%%WRITE NAMES AND PERSONAL IDENTITY NUMBERS WHERE SPECIFIED IN FILE grade_template_to_include_eng.tex%%%%%%%%%%
 \input{grade_template}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \end{titlepage}
 \newpage
 \pagestyle{plain}
@@ -30,6 +67,22 @@
 This section should include:
 \begin{itemize}
     \item derivation of a physical model of the magnetic levitator in state-space form.
+	\begin{align*}
+		m \ddot{z} &= r \dot{z} + E_{r} - F_{ul} - mg \\
+		m \ddot{y} &= r \dot{y} - E_{a} + F_{lu} - mg \\
+		F_{ul} &= F_{lu} = C m \frac{1}{(y - z)^{4}} \\
+		B &= \mu_{0} \frac{N r^{2} I(t)}{2 y^{3}} \\
+		E &= \frac{1}{2} A \frac{B^{2}(t)}{\mu_{0}} \\
+		E &= \frac{A N^{2} \mu_{0} r^{4}}{8} \frac{I^{2}(t)}{y^{6}(t)} = K m \frac{I^{2}(t)}{y^{6}(t)} \\
+		E_{a} &= K m \frac{I^{2}(t)}{y^{6}(t)} \qquad E_{r} = K m \frac{I^{2}(t)}{z^{6}(t)} \\
+		\dot{a} &= \frac{r}{m} \dot{z} + K \frac{I^{2}}{z^{6}} - C \frac{1}{(y - z)^{4}} - g \\
+		\dot{b} &= \frac{r}{m} \dot{y} + K \frac{I^{2}}{y^{6}} - C \frac{1}{(y - z)^{4}} - g \\
+		\dot{z} &= a \qquad \dot{y} = b \\
+		x &= \begin{bmatrix} a \\ b \\ z \\ y \end{bmatrix} \qquad \dot{x} = \begin{bmatrix} \dot{a} \\ \dot{b} \\ \dot{z} \\ \dot{y} \end{bmatrix} = 0 = \begin{bmatrix} f_{1}(a \; b \; z \; y \; I) \\ \vdots \\ f_{4}(a \; b \; z \; y \; I) \end{bmatrix} \\
+		\dot{X} &= A X + B I(t) \\
+		A &= \begin{bmatrix} \frac{\partial f_{1}}{\partial a} & \cdots & \frac{\partial f_{1}}{\partial I} \\ \vdots & \ddots & \vdots \\ \frac{\partial f_{4}}{\partial a} & \cdots & \frac{\partial f_{4}}{\partial I} \end{bmatrix} = \begin{bmatrix} \frac{r}{m} & 0 & - \frac{4 C}{(y - z)^{5}} - \frac{6 K I^{2}}{z^{7}} & \frac{4 C}{(y - z)^{5}} \\ 0 & \frac{r}{m} & \frac{4 C}{(y - z)^{5}} - \frac{6 K I^{2}}{z^{7}} & - \frac{4 C}{(y - z)^{5}} \\ 1 & 0 & 0 & 0 \\ 0 & 1 & 0 & 0 \end{bmatrix} \\ 
+		B &= \begin{bmatrix} \frac{\partial f_{1}}{\partial I} \\ \vdots \\ \frac{\partial f_{4}}{\partial I} \end{bmatrix} = \begin{bmatrix} \frac{2 K I}{z^{6}} \\ - \frac{2 K I}{z^{6}} \\ 0 \\ 0 \end{bmatrix}
+	\end{align*}
     \item suggestion for a suitable model order for a linear model (based on a linearization of the model)
     \item motivation for suggested model order.
     \item \textsc{Matlab} codes for the required functions.
