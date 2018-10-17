@@ -71,21 +71,21 @@ Spect1 = spect(f,1);
 %% Plot
 
 figure('units','normalized','outerposition',[0 0 1 1])
-sp(1) = subplot(1,2,1);
-hold on
-plot(f,Spect0)
-plot(f,Spect25)
-plot(f,Spect50)
-plot(f,Spect75)
-plot(f,Spect1)
-hold off
-title(sp(1), 'Mathematical Spectrum of s(t)')
-legend('\alpha = 0.00','\alpha = 0.25','\alpha = 0.50','\alpha = 0.75','\alpha = 1.00')
-axis([0 0.5 0 3])
-xlabel('f (Hz)')
-ylabel('\PHI(\omega)')
+% sp(1) = subplot(1,1,1);
+% hold on
+% plot(f,Spect0)
+% plot(f,Spect25)
+% plot(f,Spect50)
+% plot(f,Spect75)
+% plot(f,Spect1)
+% hold off
+% title(sp(1), 'Mathematical Spectrum of s(t)')
+% legend('\alpha = 0.00','\alpha = 0.25','\alpha = 0.50','\alpha = 0.75','\alpha = 1.00')
+% axis([0 0.5 0 3])
+% xlabel('f (Hz)')
+% ylabel('\Phi(\omega)')
 
-sp(2) = subplot(1,2,2);
+sp(2) = subplot(1,1,1);
 hold on
 plot(f,P1_0_AVG)
 plot(f,P1_25_AVG)
@@ -93,8 +93,8 @@ plot(f,P1_50_AVG)
 plot(f,P1_75_AVG)
 plot(f,P1_1_AVG)
 hold off
-title(sp(2), 'Single-Sided Amplitude Spectrum of s(t)')
+title(sp(2), 'Single-Sided Spectrum of Binary Random Signal')
 legend('\alpha = 0.00','\alpha = 0.25','\alpha = 0.50','\alpha = 0.75','\alpha = 1.00')
 axis([0 inf 0 15])
 xlabel('f (Hz)')
-ylabel('|P1(f)|')
+ylabel('\Phi(\omega)')

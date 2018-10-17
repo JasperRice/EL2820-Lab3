@@ -76,14 +76,31 @@ escapeinside={\%*}{*)}, % if you want to add a comment within your code
 	\par The linearized system is given by:
 	\begin{align*}
 		\dot{X} &= A X + B I(t) \\
-		\text{Where:} \quad A &= \left. \begin{bmatrix} \frac{\partial f_{1}}{\partial a} & \cdots & \frac{\partial f_{1}}{\partial y} \\ \vdots & \ddots & \vdots \\ \frac{\partial f_{4}}{\partial a} & \cdots & \frac{\partial f_{4}}{\partial y} \end{bmatrix} \right|_{a = a^{0}, b = b^{0}, z = z^{0}, y = y^{0}, I = I_{0}} = \begin{bmatrix} \frac{\gamma}{m} & 0 & - \frac{4 C}{(y^{0} - z^{0})^{5}} - \frac{6 K I^{2}}{{z^{0}}^{7}} & \frac{4 C}{(y^{0} - z^{0})^{5}} \\ 0 & \frac{\gamma}{m} & \frac{4 C}{(y^{0} - z^{0})^{5}} - \frac{6 K I^{2}}{{z^{0}}^{7}} & - \frac{4 C}{(y^{0} - z^{0})^{5}} \\ 1 & 0 & 0 & 0 \\ 0 & 1 & 0 & 0 \end{bmatrix} \\ 
-		B &= \begin{bmatrix} \frac{\partial f_{1}}{\partial I} \\ \vdots \\ \frac{\partial f_{4}}{\partial I} \end{bmatrix} = \begin{bmatrix} \frac{2 K I}{{z^{0}}^{6}} \\ - \frac{2 K I}{{z^{0}}^{6}} \\ 0 \\ 0 \end{bmatrix}
+		A &= \left. \begin{bmatrix} \frac{\partial f_{1}}{\partial a} & \cdots & \frac{\partial f_{1}}{\partial y} \\ \vdots & \ddots & \vdots \\ \frac{\partial f_{4}}{\partial a} & \cdots & \frac{\partial f_{4}}{\partial y} \end{bmatrix} \right|_{a = a^{0}, b = b^{0}, z = z^{0}, y = y^{0}, I = I_{0}} = \begin{bmatrix} \frac{\gamma}{m} & 0 & - \frac{4 C}{(y^{0} - z^{0})^{5}} - \frac{6 K I^{2}}{{z^{0}}^{7}} & \frac{4 C}{(y^{0} - z^{0})^{5}} \\ 0 & \frac{\gamma}{m} & \frac{4 C}{(y^{0} - z^{0})^{5}} - \frac{6 K I^{2}}{{z^{0}}^{7}} & - \frac{4 C}{(y^{0} - z^{0})^{5}} \\ 1 & 0 & 0 & 0 \\ 0 & 1 & 0 & 0 \end{bmatrix} \\ 
+		B &= \left. \begin{bmatrix} \frac{\partial f_{1}}{\partial I} \\ \vdots \\ \frac{\partial f_{4}}{\partial I} \end{bmatrix} \right|_{a = a^{0}, b = b^{0}, z = z^{0}, y = y^{0}, I = I_{0}} = \begin{bmatrix} \frac{2 K I}{{z^{0}}^{6}} \\ - \frac{2 K I}{{z^{0}}^{6}} \\ 0 \\ 0 \end{bmatrix}
 	\end{align*}
     \item Motivation for suggested model order:
-    \par ???
+    \par ?????
     \item \textsc{Matlab} codes for the required functions:
     \par \textsc{Matlab} codes are attached in the end of the report.
     \item One plot for the spectrum of the binary random signal for the required values of $\alpha$:
+    \begin{figure}[ht]
+		\footnotesize
+		\centering 
+		%\def\svgwidth{.8\columnwidth}
+		\includegraphics[width=\columnwidth]{chooseAlpha_0_25.eps} 
+		\caption{Spectrum of white noise signal.}
+		\label{fig:workingRegion}
+	\end{figure}
+	\begin{figure}[ht]
+		\footnotesize
+		\centering 
+		%\def\svgwidth{.8\columnwidth}
+		\includegraphics[width=\columnwidth]{spectrumAlpha.eps} 
+		\caption{Spectrum of binary random signal.}
+		\label{fig:workingRegion}
+	\end{figure}
+	\par Comparing Figure 1 and Figure 2, we can see that when $\alpha = 0.25$, the spectrum of binary random signal is most similar to the one of white noise.
 \end{itemize}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -94,11 +111,11 @@ This section should include:
     \item chosen working region.
     \item motivation for working region.
     \item plot illustrating working region, for example as shown in Fig.~\ref{fig:workingRegion}. (Always reference all figures in the text and use captions.)
-    \begin{figure}[ht]
+	\begin{figure}[ht]
 		\footnotesize
 		\centering 
 		%\def\svgwidth{.8\columnwidth}
-		\includegraphics[width=\columnwidth]{workingRegion.eps} 
+		\includegraphics[width=\columnwidth]{findWorkingRegion.png} 
 		\caption{Working region.}
 		\label{fig:workingRegion}
 	\end{figure}

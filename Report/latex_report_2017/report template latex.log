@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/W32TeX) (preloaded format=pdflatex 2016.11.21)  17 OCT 2018 15:25
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/W32TeX) (preloaded format=pdflatex 2016.11.21)  17 OCT 2018 16:37
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -578,6 +578,12 @@ File: lstlang1.sty 2015/06/04 1.6 listings language file
 
 LaTeX Warning: Label `fig:workingRegion' multiply defined.
 
+
+LaTeX Warning: Label `fig:workingRegion' multiply defined.
+
+
+LaTeX Warning: Label `fig:workingRegion' multiply defined.
+
 )
 \openout1 = `"report template latex.aux"'.
 
@@ -718,31 +724,53 @@ File: omsppl.fd
 )
 LaTeX Font Info:    Font shape `OMS/ppl/m/n' in size <10> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 47.
-
-Overfull \hbox (14.897pt too wide) in paragraph at lines 81--81
-[] 
- []
-
-[1]
-Package epstopdf Info: Source file: <workingRegion.eps>
-(epstopdf)                    date: 2018-10-14 16:42:38
-(epstopdf)                    size: 21944 bytes
-(epstopdf)             Output file: <workingRegion-eps-converted-to.pdf>
-(epstopdf)                    date: 2018-10-14 16:51:14
-(epstopdf)                    size: 7355 bytes
-(epstopdf)             Command: <repstopdf --outfile=workingRegion-eps-converte
-d-to.pdf workingRegion.eps>
-(epstopdf)             \includegraphics on input line 101.
+ [1]
+Package epstopdf Info: Source file: <chooseAlpha_0_25.eps>
+(epstopdf)                    date: 2018-10-17 16:13:36
+(epstopdf)                    size: 394095 bytes
+(epstopdf)             Output file: <chooseAlpha_0_25-eps-converted-to.pdf>
+(epstopdf)                    date: 2018-10-17 16:16:32
+(epstopdf)                    size: 139754 bytes
+(epstopdf)             Command: <repstopdf --outfile=chooseAlpha_0_25-eps-conve
+rted-to.pdf chooseAlpha_0_25.eps>
+(epstopdf)             \includegraphics on input line 91.
 Package epstopdf Info: Output file is already uptodate.
- <workingRegion-eps-converted-to.pdf, id=25, 1156.32pt x 571.13374pt>
-File: workingRegion-eps-converted-to.pdf Graphic file (type pdf)
 
-<use workingRegion-eps-converted-to.pdf>
-Package pdftex.def Info: workingRegion-eps-converted-to.pdf used on input line 
-101.
+<chooseAlpha_0_25-eps-converted-to.pdf, id=25, 1156.32pt x 571.13374pt>
+File: chooseAlpha_0_25-eps-converted-to.pdf Graphic file (type pdf)
+
+<use chooseAlpha_0_25-eps-converted-to.pdf>
+Package pdftex.def Info: chooseAlpha_0_25-eps-converted-to.pdf used on input li
+ne 91.
 (pdftex.def)             Requested size: 424.06033pt x 209.45122pt.
+Package epstopdf Info: Source file: <spectrumAlpha.eps>
+(epstopdf)                    date: 2018-10-17 16:31:09
+(epstopdf)                    size: 37502 bytes
+(epstopdf)             Output file: <spectrumAlpha-eps-converted-to.pdf>
+(epstopdf)                    date: 2018-10-17 16:31:15
+(epstopdf)                    size: 16332 bytes
+(epstopdf)             Command: <repstopdf --outfile=spectrumAlpha-eps-converte
+d-to.pdf spectrumAlpha.eps>
+(epstopdf)             \includegraphics on input line 99.
+Package epstopdf Info: Output file is already uptodate.
+
+<spectrumAlpha-eps-converted-to.pdf, id=26, 1156.32pt x 571.13374pt>
+File: spectrumAlpha-eps-converted-to.pdf Graphic file (type pdf)
+
+<use spectrumAlpha-eps-converted-to.pdf>
+Package pdftex.def Info: spectrumAlpha-eps-converted-to.pdf used on input line 
+99.
+(pdftex.def)             Requested size: 424.06033pt x 209.45122pt.
+ [2 <./chooseAlpha_0_25-eps-converted-to.pdf> <./spectrumAlpha-eps-converted-to
+.pdf>]
+<findWorkingRegion.png, id=40, 934.24031pt x 514.17094pt>
+File: findWorkingRegion.png Graphic file (type png)
+
+<use findWorkingRegion.png>
+Package pdftex.def Info: findWorkingRegion.png used on input line 118.
+(pdftex.def)             Requested size: 424.06033pt x 233.39111pt.
  (./figures/maglev_working.pdf_tex
-<./figures/maglev_working.pdf, id=26, page=1, 173.24742pt x 69.50342pt>
+<./figures/maglev_working.pdf, id=42, page=1, 173.24742pt x 69.50342pt>
 File: ./figures/maglev_working.pdf Graphic file (type pdf)
 
 <use ./figures/maglev_working.pdf, page 1>
@@ -750,7 +778,7 @@ Package pdftex.def Info: ./figures/maglev_working.pdf, page1 used on input line
  52.
 (pdftex.def)             Requested size: 339.24956pt x 136.12181pt.
 
-<./figures/maglev_working.pdf, id=27, page=2, 173.24742pt x 69.50342pt>
+<./figures/maglev_working.pdf, id=43, page=2, 173.24742pt x 69.50342pt>
 File: ./figures/maglev_working.pdf Graphic file (type pdf)
 
 <use ./figures/maglev_working.pdf, page 2>
@@ -758,7 +786,7 @@ Package pdftex.def Info: ./figures/maglev_working.pdf, page2 used on input line
  56.
 (pdftex.def)             Requested size: 339.24956pt x 136.12181pt.
 
-<./figures/maglev_working.pdf, id=28, page=3, 173.24742pt x 69.50342pt>
+<./figures/maglev_working.pdf, id=44, page=3, 173.24742pt x 69.50342pt>
 File: ./figures/maglev_working.pdf Graphic file (type pdf)
 
 <use ./figures/maglev_working.pdf, page 3>
@@ -766,51 +794,52 @@ Package pdftex.def Info: ./figures/maglev_working.pdf, page3 used on input line
  60.
 (pdftex.def)             Requested size: 339.24956pt x 136.12181pt.
 
-<./figures/maglev_working.pdf, id=29, page=4, 173.24742pt x 69.50342pt>
+<./figures/maglev_working.pdf, id=45, page=4, 173.24742pt x 69.50342pt>
 File: ./figures/maglev_working.pdf Graphic file (type pdf)
 
 <use ./figures/maglev_working.pdf, page 4>
 Package pdftex.def Info: ./figures/maglev_working.pdf, page4 used on input line
  64.
 (pdftex.def)             Requested size: 339.24956pt x 136.12181pt.
-) [2 <./workingRegion-eps-converted-to.pdf>]
-LaTeX Font Info:    Try loading font information for OT1+pcr on input line 152.
+) [3 <./findWorkingRegion.png> <./figures/maglev_working.pdf> <./figures/maglev
+_working.pdf
+
+pdfTeX warning: pdflatex.exe (file ./figures/maglev_working.pdf): PDF inclusion
+: multiple pdfs with page group included in a single page
+> <./figures/maglev_working.pdf
+
+pdfTeX warning: pdflatex.exe (file ./figures/maglev_working.pdf): PDF inclusion
+: multiple pdfs with page group included in a single page
+> <./figures/maglev_working.pdf
+
+pdfTeX warning: pdflatex.exe (file ./figures/maglev_working.pdf): PDF inclusion
+: multiple pdfs with page group included in a single page
+>]
+LaTeX Font Info:    Try loading font information for OT1+pcr on input line 169.
 
  (c:/texlive/2016/texmf-dist/tex/latex/psnfss/ot1pcr.fd
 File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
 )
-Overfull \hbox (18.4161pt too wide) in paragraph at lines 152--153
+Overfull \hbox (18.4161pt too wide) in paragraph at lines 169--170
 []\OT1/ppl/m/n/10 validation per-formed with sim-u-la-tion (\OT1/pcr/m/n/10 com
 pare \OT1/ppl/m/n/10 with \OT1/pcr/m/n/10 M=inf\OT1/ppl/m/n/10 ) and cor-re-la-
 tion anal-y-sis (\OT1/pcr/m/n/10 resid\OT1/ppl/m/n/10 ). 
  []
 
-[3 <./figures/maglev_working.pdf> <./figures/maglev_working.pdf
-
-pdfTeX warning: pdflatex.exe (file ./figures/maglev_working.pdf): PDF inclusion
-: multiple pdfs with page group included in a single page
-> <./figures/maglev_working.pdf
-
-pdfTeX warning: pdflatex.exe (file ./figures/maglev_working.pdf): PDF inclusion
-: multiple pdfs with page group included in a single page
-> <./figures/maglev_working.pdf
-
-pdfTeX warning: pdflatex.exe (file ./figures/maglev_working.pdf): PDF inclusion
-: multiple pdfs with page group included in a single page
->] (./generateBinarySignal.m) (./getAverage.m) (./getStationaryAverages.m)
-(./findWorkingRegion.m [4])
+[4] (./generateBinarySignal.m) (./getAverage.m) (./getStationaryAverages.m)
+(./findWorkingRegion.m [5])
 LaTeX Font Info:    Font shape `OT1/ppl/bx/n' in size <10> not available
-(Font)              Font shape `OT1/ppl/b/n' tried instead on input line 168.
- [5] (./report template latex.aux)
+(Font)              Font shape `OT1/ppl/b/n' tried instead on input line 185.
+ [6] (./report template latex.aux)
 
 LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 24468 strings out of 493013
- 603131 string characters out of 6136992
+ 24478 strings out of 493013
+ 603429 string characters out of 6136992
  879851 words of memory out of 5000000
- 27572 multiletter control sequences out of 15000+600000
+ 27580 multiletter control sequences out of 15000+600000
  17132 words of font info for 48 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  62i,17n,96p,742b,1148s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -831,10 +860,10 @@ texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb><c:/texlive/20
 16/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb><c:/texlive/2016/texmf-dist/fo
 nts/type1/urw/palatino/uplb8a.pfb><c:/texlive/2016/texmf-dist/fonts/type1/urw/p
 alatino/uplr8a.pfb>
-Output written on "report template latex.pdf" (6 pages, 204635 bytes).
+Output written on "report template latex.pdf" (7 pages, 484191 bytes).
 PDF statistics:
- 111 PDF objects out of 1000 (max. 8388607)
- 78 compressed objects within 1 object stream
+ 124 PDF objects out of 1000 (max. 8388607)
+ 87 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 38 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 48 words of extra memory for PDF output out of 10000 (max. 10000000)
 
