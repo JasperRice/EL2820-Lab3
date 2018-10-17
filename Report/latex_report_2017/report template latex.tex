@@ -68,7 +68,7 @@ escapeinside={\%*}{*)}, % if you want to add a comment within your code
 		\dot{z} &= a \\
 		\dot{y} &= b
 	\end{align*}
-	\item Suggestion for a suitable model order for a linear model (based on a linearization of the model):
+	\item Suggestion for a suitable model order for a linear model (based on a linearization of the model) ?????:
 	\par In stationarity, we have:
 	\begin{align*}
 		x &= \begin{bmatrix} a \\ b \\ z \\ y \end{bmatrix} \qquad \dot{x} = \begin{bmatrix} \dot{a} \\ \dot{b} \\ \dot{z} \\ \dot{y} \end{bmatrix} = 0 = \begin{bmatrix} f_{1}(a, b, z, y, I_{0}) \\ \vdots \\ f_{4}(a, b, z, y, I_{0}) \end{bmatrix}
@@ -81,29 +81,27 @@ escapeinside={\%*}{*)}, % if you want to add a comment within your code
 	\end{align*}
     \item Motivation for suggested model order:
     \par ?????
-    \item \textsc{Matlab} codes for the required functions:
-    \par \textsc{Matlab} codes are attached in the end of the report.
-    \item One plot for the spectrum of the binary random signal for the required values of $\alpha$:
-	\begin{figure}[ht]
+    \item \textsc{Matlab} codes for the required functions are attached in the page ~\pageref{matlabCode}.
+    \item Plot for the spectrum of the binary random signal for the required values of $\alpha$ is shown in Fig.~\ref{fig:binarySpectrum}.
+	\begin{figure}[h]
 		\footnotesize
 		\centering 
 		%\def\svgwidth{.8\columnwidth}
-		\includegraphics[width=\columnwidth]{chooseAlpha_0_25.eps} 
-		\caption{Spectrum of white noise signal and binary random signal.}
-		\label{fig:Spectrum}
+		\includegraphics[width=\columnwidth]{binarySpectrum.eps} 
+		\caption{Spectrum of binary random signal.}
+		\label{fig:binarySpectrum}
 	\end{figure}
-	\par From figure, we can see that when $\alpha = 0.25$, the spectrum of binary random signal is most similar to the one of white noise.
 \end{itemize}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Working region}
-This section should include:
 \begin{itemize}
-    \item chosen working region.
-    \item motivation for working region.
-    \item plot illustrating working region, for example as shown in Fig.~\ref{fig:workingRegion}. (Always reference all figures in the text and use captions.)
-	\begin{figure}[ht]
+    \item After the experiment, we choose working region as 1.5A $\sim$ 3.6A.
+    \item Motivation for working region:
+    \par From Fig.~\ref{fig:workingRegion}, we can see that when $u \in [1.5A, 3.6A]$, the plot have linearity.
+    \item Plot for illustrating working region is shown in Fig.~\ref{fig:workingRegion}.
+	\begin{figure}[h]
 		\footnotesize
 		\centering 
 		%\def\svgwidth{.8\columnwidth}
@@ -112,24 +110,31 @@ This section should include:
 		\label{fig:workingRegion}
 	\end{figure}
 \end{itemize}
-%
-\begin{figure}[ht]
-	\footnotesize
-	\centering 
-	\def\svgwidth{.8\columnwidth}
-	\input{figures/maglev_working.pdf_tex} 
-	\caption{Example of how to choose the working region.}
-	\label{fig:workingRegion}
-	\end{figure}
+%	\begin{figure}[ht]
+%		\footnotesize
+%		\centering
+%		\def\svgwidth{.8\columnwidth}
+%		\input{figures/maglev_working.pdf_tex} 
+%		\caption{Example of how to choose the working region.}
+%		\label{fig:workingRegion}
+%	\end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Sampling time}
-This section should include:
 \begin{itemize}
-    \item sampling time.
-    \item motivation for sampling time.
-    \item plot of step responses yielding sampling time.
+    \item In the experiment, we chose $Ts = 0.002s$ as sampling time.
+    \item Motivation for sampling time:
+    \par Fig.~\ref{fig:samplingTime} is obtained with the sampling time of $0.001s$, and we can see the rise time is about $13ms$, which means there are about 13 points in one rise time. According to the requirement of ``the sampling time is set to give around four to ten samples per rise time'' in the lab description, we choose $2ms$ as sampling time so that there will be 6 to 7 samples per rise time.
+    \item Plot of step responses yielding sampling time:
+    \begin{figure}[h]
+		\footnotesize
+		\centering 
+		%\def\svgwidth{.8\columnwidth}
+		\includegraphics[width=\columnwidth]{findSamplingTime.png} 
+		\caption{Working region.}
+		\label{fig:samplingTime}
+	\end{figure}
 \end{itemize}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -167,12 +172,12 @@ This section should include:
 
 \newpage
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+{\bf Note that the report is not in the format of a conference or journal paper. However, the language should be correct, concise and understandable. The figures should be clear, have captions, labels and be referenced in the text. All equations should be punctuated appropriately. (Equations are considered as part of sentences and should be treated accordingly.) All introduced symbols must be defined.}
 \section*{Attachments}
+	\label{matlabCode}
     \lstinputlisting{generateBinarySignal.m}
 	\lstinputlisting{getAverage.m}
 	\lstinputlisting{getStationaryAverages.m}
 	\lstinputlisting{findWorkingRegion.m}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-{\bf Note that the report is not in the format of a conference or journal paper. However, the language should be correct, concise and understandable. The figures should be clear, have captions, labels and be referenced in the text. All equations should be punctuated appropriately. (Equations are considered as part of sentences and should be treated accordingly.) All introduced symbols must be defined.}
 \end{document}
