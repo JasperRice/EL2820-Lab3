@@ -17,6 +17,7 @@
 
 %%%%% My packages
 \usepackage{listings}
+\usepackage{amstext}
 \usepackage{color, xcolor}
 %\usepackage{amsmath,mathtools,amssymb,amsfonts,dsfont,cancel} %Math Package
 %%%%%
@@ -43,29 +44,47 @@ escapeinside={\%*}{*)}, % if you want to add a comment within your code
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Preparation task}
 \begin{itemize}
-    \item Derivation of a physical model of the magnetic levitator in state-space form.
+    \item Derivation of a physical model of the magnetic levitator in state-space form:
+    \par From figure in the lab description, we can get:
 	\begin{align*}
-		m \ddot{z} &= r \dot{z} + E_{r} - F_{ul} - mg \\
-		m \ddot{y} &= r \dot{y} - E_{a} + F_{lu} - mg \\
-		F_{ul} &= F_{lu} = C m \frac{1}{(y - z)^{4}} \\
-		B &= \mu_{0} \frac{N r^{2} I(t)}{2 y^{3}} \\
-		E &= \frac{1}{2} A \frac{B^{2}(t)}{\mu_{0}} \\
-		E &= \frac{A N^{2} \mu_{0} r^{4}}{8} \frac{I^{2}(t)}{y^{6}(t)} = K m \frac{I^{2}(t)}{y^{6}(t)} \\
-		E_{a} &= K m \frac{I^{2}(t)}{y^{6}(t)} \qquad E_{r} = K m \frac{I^{2}(t)}{z^{6}(t)} \\
-		\dot{a} &= \frac{r}{m} \dot{z} + K \frac{I^{2}}{z^{6}} - C \frac{1}{(y - z)^{4}} - g \\
-		\dot{b} &= \frac{r}{m} \dot{y} + K \frac{I^{2}}{y^{6}} - C \frac{1}{(y - z)^{4}} - g \\
-		\dot{z} &= a \qquad \dot{y} = b \\
-		x &= \begin{bmatrix} a \\ b \\ z \\ y \end{bmatrix} \qquad \dot{x} = \begin{bmatrix} \dot{a} \\ \dot{b} \\ \dot{z} \\ \dot{y} \end{bmatrix} = 0 = \begin{bmatrix} f_{1}(a \; b \; z \; y \; I) \\ \vdots \\ f_{4}(a \; b \; z \; y \; I) \end{bmatrix} \\
-		\dot{X} &= A X + B I(t) \\
-		A &= \begin{bmatrix} \frac{\partial f_{1}}{\partial a} & \cdots & \frac{\partial f_{1}}{\partial I} \\ \vdots & \ddots & \vdots \\ \frac{\partial f_{4}}{\partial a} & \cdots & \frac{\partial f_{4}}{\partial I} \end{bmatrix} = \begin{bmatrix} \frac{r}{m} & 0 & - \frac{4 C}{(y - z)^{5}} - \frac{6 K I^{2}}{z^{7}} & \frac{4 C}{(y - z)^{5}} \\ 0 & \frac{r}{m} & \frac{4 C}{(y - z)^{5}} - \frac{6 K I^{2}}{z^{7}} & - \frac{4 C}{(y - z)^{5}} \\ 1 & 0 & 0 & 0 \\ 0 & 1 & 0 & 0 \end{bmatrix} \\ 
-		B &= \begin{bmatrix} \frac{\partial f_{1}}{\partial I} \\ \vdots \\ \frac{\partial f_{4}}{\partial I} \end{bmatrix} = \begin{bmatrix} \frac{2 K I}{z^{6}} \\ - \frac{2 K I}{z^{6}} \\ 0 \\ 0 \end{bmatrix}
+		m \ddot{z} &= \gamma \dot{z} + E_{r} - F_{ul} - mg \\
+		m \ddot{y} &= \gamma \dot{y} - E_{a} + F_{lu} - mg
 	\end{align*}
-    \item suggestion for a suitable model order for a linear model (based on a linearization of the model)
-    \item motivation for suggested model order.
-    \item \textsc{Matlab} codes for the required functions.
-    \item one plot for the spectrum of the binary random signal for the required values of $\alpha$.
+	\par Repulsive magnet force is proportional to $m \vert y - z \vert^{-4}$, and here, constant $C$ is given to represent the proportion:
+	\begin{align*}
+		F_{ul} &= F_{lu} = C m \frac{1}{(y - z)^{4}}
+	\end{align*}
+	\par From exercise 2.5, the electromagnetic force can be obtained, where $K$ is a constant:	
+	\begin{align*}
+		B &= \mu_{0} \frac{N \gamma^{2} I(t)}{2 y^{3}} \\
+		E &= \frac{1}{2} A \frac{B^{2}(t)}{\mu_{0}} \\
+		E &= \frac{A N^{2} \mu_{0} \gamma^{4}}{8} \frac{I^{2}(t)}{y^{6}(t)} = K m \frac{I^{2}(t)}{y^{6}(t)} \\
+		\text{So:} \quad E_{a} &= K m \frac{I^{2}(t)}{y^{6}(t)} \qquad E_{r} = K m \frac{I^{2}(t)}{z^{6}(t)}
+	\end{align*}
+	\par Then we can obtain state space equations:
+	\begin{align*}
+		\dot{a} &= \frac{\gamma}{m} \dot{z} + K \frac{I^{2}}{z^{6}} - C \frac{1}{(y - z)^{4}} - g \\
+		\dot{b} &= \frac{\gamma}{m} \dot{y} + K \frac{I^{2}}{y^{6}} - C \frac{1}{(y - z)^{4}} - g \\
+		\dot{z} &= a \\
+		\dot{y} &= b
+	\end{align*}
+	\item Suggestion for a suitable model order for a linear model (based on a linearization of the model):
+	\par In stationarity, we have:
+	\begin{align*}
+		x &= \begin{bmatrix} a \\ b \\ z \\ y \end{bmatrix} \qquad \dot{x} = \begin{bmatrix} \dot{a} \\ \dot{b} \\ \dot{z} \\ \dot{y} \end{bmatrix} = 0 = \begin{bmatrix} f_{1}(a, b, z, y, I_{0}) \\ \vdots \\ f_{4}(a, b, z, y, I_{0}) \end{bmatrix}
+	\end{align*}
+	\par The linearized system is given by:
+	\begin{align*}
+		\dot{X} &= A X + B I(t) \\
+		\text{Where:} \quad A &= \left. \begin{bmatrix} \frac{\partial f_{1}}{\partial a} & \cdots & \frac{\partial f_{1}}{\partial y} \\ \vdots & \ddots & \vdots \\ \frac{\partial f_{4}}{\partial a} & \cdots & \frac{\partial f_{4}}{\partial y} \end{bmatrix} \right|_{a = a^{0}, b = b^{0}, z = z^{0}, y = y^{0}, I = I_{0}} = \begin{bmatrix} \frac{\gamma}{m} & 0 & - \frac{4 C}{(y^{0} - z^{0})^{5}} - \frac{6 K I^{2}}{{z^{0}}^{7}} & \frac{4 C}{(y^{0} - z^{0})^{5}} \\ 0 & \frac{\gamma}{m} & \frac{4 C}{(y^{0} - z^{0})^{5}} - \frac{6 K I^{2}}{{z^{0}}^{7}} & - \frac{4 C}{(y^{0} - z^{0})^{5}} \\ 1 & 0 & 0 & 0 \\ 0 & 1 & 0 & 0 \end{bmatrix} \\ 
+		B &= \begin{bmatrix} \frac{\partial f_{1}}{\partial I} \\ \vdots \\ \frac{\partial f_{4}}{\partial I} \end{bmatrix} = \begin{bmatrix} \frac{2 K I}{{z^{0}}^{6}} \\ - \frac{2 K I}{{z^{0}}^{6}} \\ 0 \\ 0 \end{bmatrix}
+	\end{align*}
+    \item Motivation for suggested model order:
+    \par ???
+    \item \textsc{Matlab} codes for the required functions:
+    \par \textsc{Matlab} codes are attached in the end of the report.
+    \item One plot for the spectrum of the binary random signal for the required values of $\alpha$:
 \end{itemize}
-Hint: This section should fit in 1-2 pages. You don't need to explain theory here.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
