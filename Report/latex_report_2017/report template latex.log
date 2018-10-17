@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/W32TeX) (preloaded format=pdflatex 2016.11.21)  17 OCT 2018 22:29
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/W32TeX) (preloaded format=pdflatex 2016.11.21)  17 OCT 2018 22:35
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -756,8 +756,79 @@ Package pdftex.def Info: findSamplingTime.png used on input line 134.
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 [2 <./binarySpectrum-eps-converted-to.pdf>]
-LaTeX Font Info:    Try loading font information for OT1+pcr on input line 166.
+! Missing \endcsname inserted.
+<to be read again> 
+                   \unhbox 
+l.145 ...ref{fig:binarySpectrum} and Fig~\ref{•}
+                                                  .
+The control sequence marked <to be read again> should
+not appear between \csname and \endcsname.
 
+LaTeX Font Info:    Font shape `OT1/ppl/bx/n' in size <10> not available
+(Font)              Font shape `OT1/ppl/b/n' tried instead on input line 145.
+
+LaTeX Warning: Reference `\voidb@x ' on page 3 undefined on input line 145.
+
+
+! Package inputenc Error: Keyboard character used is undefined
+(inputenc)                in inputencoding `latin1'.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.145 ...ref{fig:binarySpectrum} and Fig~\ref{•}
+                                                  .
+You need to provide a definition with \DeclareInputText 
+or \DeclareInputMath before using this key.
+
+
+! LaTeX Error: Command \textcent unavailable in encoding OT1.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.145 ...ref{fig:binarySpectrum} and Fig~\ref{•}
+                                                  .
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+! Extra \endcsname.
+\ref ...pandafter \@setref \csname r@#1\endcsname 
+                                                  \@firstoftwo {#1}
+l.145 ...ref{fig:binarySpectrum} and Fig~\ref{•}
+                                                  .
+I'm ignoring this, since I wasn't doing a \csname.
+
+
+! Package inputenc Error: Keyboard character used is undefined
+(inputenc)                in inputencoding `latin1'.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.145 ...ef{fig:binarySpectrum} and Fig~\ref{•}.
+                                                  
+You need to provide a definition with \DeclareInputText 
+or \DeclareInputMath before using this key.
+
+
+! LaTeX Error: Command \textcent unavailable in encoding OT1.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.145 ...ef{fig:binarySpectrum} and Fig~\ref{•}.
+                                                  
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+LaTeX Font Info:    Try loading font information for OT1+pcr on input line 166.
 
 (c:/texlive/2016/texmf-dist/tex/latex/psnfss/ot1pcr.fd
 File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
@@ -769,34 +840,34 @@ tion anal-y-sis (\OT1/pcr/m/n/10 resid\OT1/ppl/m/n/10 ).
  []
 
 [3 <./findWorkingRegion.png>] [4 <./findSamplingTime.png>]
-LaTeX Font Info:    Font shape `OT1/ppl/bx/n' in size <10> not available
-(Font)              Font shape `OT1/ppl/b/n' tried instead on input line 175.
-
 (./generateBinarySignal.m) (./getAverage.m) (./getStationaryAverages.m)
-(./findWorkingRegion.m [5]) [6] (./report template latex.aux) ) 
+(./findWorkingRegion.m [5]) [6] (./report template latex.aux)
+
+LaTeX Warning: There were undefined references.
+
+ ) 
 Here is how much of TeX's memory you used:
- 24448 strings out of 493013
- 602703 string characters out of 6136992
+ 24451 strings out of 493013
+ 602725 string characters out of 6136992
  872851 words of memory out of 5000000
- 27561 multiletter control sequences out of 15000+600000
+ 27564 multiletter control sequences out of 15000+600000
  14895 words of font info for 42 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  62i,17n,96p,742b,1148s stack positions out of 5000i,500n,10000p,200000b,80000s
-{c:/texlive/2016
-/texmf-dist/fonts/enc/dvips/base/8r.enc}<c:/texlive/2016/texmf-dist/fonts/type1
-/public/amsfonts/cm/cmex10.pfb><c:/texlive/2016/texmf-dist/fonts/type1/public/a
-msfonts/cm/cmmi10.pfb><c:/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/c
-m/cmmi7.pfb><c:/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pf
-b><c:/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><c:/texl
-ive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb><c:/texlive/2016/te
-xmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb><c:/texlive/2016/texmf-dist/fo
-nts/type1/public/amsfonts/cm/cmr9.pfb><c:/texlive/2016/texmf-dist/fonts/type1/p
-ublic/amsfonts/cm/cmsy10.pfb><c:/texlive/2016/texmf-dist/fonts/type1/public/ams
-fonts/cm/cmsy7.pfb><c:/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/c
-msy9.pfb><c:/texlive/2016/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb><c:/tex
-live/2016/texmf-dist/fonts/type1/urw/palatino/uplb8a.pfb><c:/texlive/2016/texmf
--dist/fonts/type1/urw/palatino/uplr8a.pfb>
-Output written on "report template latex.pdf" (7 pages, 355157 bytes).
+{c:/texlive/2016/texmf-dist/fonts/enc/dvips/base/8r.enc}<c:/texlive/2016/texm
+f-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><c:/texlive/2016/texmf-dist/fo
+nts/type1/public/amsfonts/cm/cmmi10.pfb><c:/texlive/2016/texmf-dist/fonts/type1
+/public/amsfonts/cm/cmmi7.pfb><c:/texlive/2016/texmf-dist/fonts/type1/public/am
+sfonts/cm/cmmi9.pfb><c:/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/
+cmr10.pfb><c:/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb><
+c:/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb><c:/texlive/
+2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb><c:/texlive/2016/texmf-
+dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/texlive/2016/texmf-dist/font
+s/type1/public/amsfonts/cm/cmsy7.pfb><c:/texlive/2016/texmf-dist/fonts/type1/pu
+blic/amsfonts/cm/cmsy9.pfb><c:/texlive/2016/texmf-dist/fonts/type1/urw/courier/
+ucrr8a.pfb><c:/texlive/2016/texmf-dist/fonts/type1/urw/palatino/uplb8a.pfb><c:/
+texlive/2016/texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb>
+Output written on "report template latex.pdf" (7 pages, 355766 bytes).
 PDF statistics:
  99 PDF objects out of 1000 (max. 8388607)
  69 compressed objects within 1 object stream
