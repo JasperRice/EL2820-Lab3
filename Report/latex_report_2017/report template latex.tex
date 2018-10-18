@@ -6,7 +6,7 @@
 \usepackage{pgfplots}  
 \usepackage{fancybox}
 \usepackage{amsmath}
-\usepackage[margin=1.2in]{geometry}
+\usepackage[margin=1in]{geometry}
 \setlength{\parindent}{0pt}
 \setlength{\parskip}{4mm}
 \graphicspath{{./figures/}}
@@ -19,6 +19,7 @@
 \usepackage{listings}
 \usepackage{amstext}
 \usepackage{color, xcolor}
+\usepackage{tabularx}
 %\usepackage{amsmath,mathtools,amssymb,amsfonts,dsfont,cancel} %Math Package
 %%%%%
 
@@ -46,48 +47,54 @@ escapeinside={\%*}{*)}, % if you want to add a comment within your code
 \begin{itemize}
     \item Derivation of a physical model of the magnetic levitator in state-space form:
     \par From figure in the lab description, we can get:
-	\begin{align*}
+	\begin{align}
 		m \ddot{z} &= \gamma \dot{z} + E_{r} - F_{ul} - mg \\
 		m \ddot{y} &= \gamma \dot{y} - E_{a} + F_{lu} - mg
-	\end{align*}
-	\par Repulsive magnet force is proportional to $m \vert y - z \vert^{-4}$, and here, constant $C$ is given to represent the proportion:
-	\begin{align*}
-		F_{ul} &= F_{lu} = C m \frac{1}{(y - z)^{4}}
-	\end{align*}
-	\par From exercise 2.5, the electromagnetic force can be obtained, where $K$ is a constant:	
-	\begin{align*}
+	\end{align}
+	\par Repulsive magnet force is proportional to $m \vert y - z \vert^{-4}$, and here, constant $T$ is given to represent the proportion:
+	\begin{align}
+		F_{ul} &= F_{lu} = T m \frac{1}{(y - z)^{4}}
+	\end{align}
+	\par From exercise 2.5, the electromagnetic force can be obtained, where $K$ is a constant and $A$ is the area of the coil:
+	\begin{align}
 		B &= \mu_{0} \frac{N \gamma^{2} I(t)}{2 y^{3}} \\
 		E &= \frac{1}{2} A \frac{B^{2}(t)}{\mu_{0}} \\
 		E &= \frac{A N^{2} \mu_{0} \gamma^{4}}{8} \frac{I^{2}(t)}{y^{6}(t)} = K m \frac{I^{2}(t)}{y^{6}(t)} \\
 		\text{So:} \quad E_{a} &= K m \frac{I^{2}(t)}{y^{6}(t)} \qquad E_{r} = K m \frac{I^{2}(t)}{z^{6}(t)}
-	\end{align*}
+	\end{align}
 	\par Then we can obtain state space equations:
-	\begin{align*}
-		\dot{a} &= \frac{\gamma}{m} \dot{z} + K \frac{I^{2}}{z^{6}} - C \frac{1}{(y - z)^{4}} - g \\
-		\dot{b} &= \frac{\gamma}{m} \dot{y} + K \frac{I^{2}}{y^{6}} - C \frac{1}{(y - z)^{4}} - g \\
+	\begin{align}
+		\dot{a} &= \frac{\gamma}{m} \dot{z} + K \frac{I^{2}}{z^{6}} - T \frac{1}{(y - z)^{4}} - g \\
+		\dot{b} &= \frac{\gamma}{m} \dot{y} + K \frac{I^{2}}{y^{6}} - T \frac{1}{(y - z)^{4}} - g \\
 		\dot{z} &= a \\
 		\dot{y} &= b
-	\end{align*}
+	\end{align}
 	\item Suggestion for a suitable model order for a linear model:
 	\par In stationarity, we have:
-	\begin{align*}
+	\begin{align}
 		x &= \begin{bmatrix} a \\ b \\ z \\ y \end{bmatrix} \qquad \dot{x} = \begin{bmatrix} \dot{a} \\ \dot{b} \\ \dot{z} \\ \dot{y} \end{bmatrix} = 0 = \begin{bmatrix} f_{1}(a, b, z, y, I_{0}) \\ \vdots \\ f_{4}(a, b, z, y, I_{0}) \end{bmatrix}
-	\end{align*}
+	\end{align}
 	\par The linearized system is given by:
-	\begin{align*}
-		\dot{X} &= A X + B I(t) \\
-		A &= \left. \begin{bmatrix} \frac{\partial f_{1}}{\partial a} & \cdots & \frac{\partial f_{1}}{\partial y} \\ \vdots & \ddots & \vdots \\ \frac{\partial f_{4}}{\partial a} & \cdots & \frac{\partial f_{4}}{\partial y} \end{bmatrix} \right|_{a = a^{0}, b = b^{0}, z = z^{0}, y = y^{0}, I = I_{0}} = \begin{bmatrix} \frac{\gamma}{m} & 0 & - \frac{4 C}{(y^{0} - z^{0})^{5}} - \frac{6 K I^{2}}{{z^{0}}^{7}} & \frac{4 C}{(y^{0} - z^{0})^{5}} \\ 0 & \frac{\gamma}{m} & \frac{4 C}{(y^{0} - z^{0})^{5}} & - \frac{4 C}{(y^{0} - z^{0})^{5}} + \frac{6 K I^{2}}{{y^{0}}^{7}} \\ 1 & 0 & 0 & 0 \\ 0 & 1 & 0 & 0 \end{bmatrix} \\ 
-		B &= \left. \begin{bmatrix} \frac{\partial f_{1}}{\partial I} \\ \vdots \\ \frac{\partial f_{4}}{\partial I} \end{bmatrix} \right|_{a = a^{0}, b = b^{0}, z = z^{0}, y = y^{0}, I = I_{0}} = \begin{bmatrix} \frac{2 K I}{{z^{0}}^{6}} \\ - \frac{2 K I}{{z^{0}}^{6}} \\ 0 \\ 0 \end{bmatrix}
-	\end{align*}
-    \item Motivation for suggested model order:
-    \par ?????
+	\begin{align}
+		\dot{\mathbf{X}} &= A \mathbf{X} + B I(t) \\
+		\mathbf{Y} &= C \mathbf{X} + D\\
+		A &= \left. \begin{bmatrix} \frac{\partial f_{1}}{\partial a} & \cdots & \frac{\partial f_{1}}{\partial y} \\ \vdots & \ddots & \vdots \\ \frac{\partial f_{4}}{\partial a} & \cdots & \frac{\partial f_{4}}{\partial y} \end{bmatrix} \right|_{a = a^{0}, b = b^{0}, z = z^{0}, y = y^{0}, I = I_{0}} = \begin{bmatrix} \frac{\gamma}{m} & 0 & - \frac{4 T}{(y^{0} - z^{0})^{5}} - \frac{6 K I^{2}}{{z^{0}}^{7}} & \frac{4 T}{(y^{0} - z^{0})^{5}} \\ 0 & \frac{\gamma}{m} & \frac{4 T}{(y^{0} - z^{0})^{5}} & - \frac{4 T}{(y^{0} - z^{0})^{5}} + \frac{6 K I^{2}}{{y^{0}}^{7}} \\ 1 & 0 & 0 & 0 \\ 0 & 1 & 0 & 0 \end{bmatrix} \\ 
+		B &= \left. \begin{bmatrix} \frac{\partial f_{1}}{\partial I} \\ \vdots \\ \frac{\partial f_{4}}{\partial I} \end{bmatrix} \right|_{a = a^{0}, b = b^{0}, z = z^{0}, y = y^{0}, I = I_{0}} = \begin{bmatrix} \frac{2 K I}{{z^{0}}^{6}} \\ - \frac{2 K I}{{z^{0}}^{6}} \\ 0 \\ 0 \end{bmatrix} \\
+		C &= \begin{bmatrix} 0 & 0 & 0 & 1 \end{bmatrix}^{T} \qquad D = \begin{bmatrix} 0 & 0 & 0 & 0 \end{bmatrix}^{T}
+	\end{align}
+	\par Then the transform function is given as, where $\mathbf{I}$ is the identity matrix and $N^{a}_{i}$ is a polynomial of $i$ degree with label $a$ on nominator:
+	\begin{align}
+		G(q) &= C^{T}(q \mathbf{I} - A)^{-1}B + D \\
+		&= \frac{N^{a}_{3}(q)}{D^{a}_{4}(q)} + \frac{N^{b}_{0}(q)}{D^{b}_{4}(q)}
+	\end{align}
+	\par Approximating $G(q)$ with $D^{a}_{4}(q) = D^{b}_{4}(q)$, the trasfer function would be $G(q) = \frac{N_{3}(q)}{D_{4}(q)}$. Plus, since our sampling time would be $2ms$ and the delay time would be $9ms$ in our experiment, base on the equation $n_{k} = \lfloor\frac{\tau}{h}\rfloor + 1$ from the lecture slides, we get $n_{k} = 5$. In all, our suggestion of the model order for ARX model could be ARX(4 3 5). Then the ARMAX and BJ models can be modified accordingly.
     \item \textsc{Matlab} codes for the required functions are attached in the page ~\pageref{matlabCode}.
     \item Plot for the spectrum of the binary random signal for the required values of $\alpha$ is shown in Fig.~\ref{fig:binarySpectrum}.
 	\begin{figure}[h]
 		\footnotesize
 		\centering 
 		%\def\svgwidth{.8\columnwidth}
-		\includegraphics[width=0.8\columnwidth]{binarySpectrum.eps} 
+		\includegraphics[width=0.7\columnwidth]{binarySpectrum.eps} 
 		\caption{Spectrum of binary random signal.}
 		\label{fig:binarySpectrum}
 	\end{figure}
@@ -105,7 +112,7 @@ escapeinside={\%*}{*)}, % if you want to add a comment within your code
 		\footnotesize
 		\centering 
 		%\def\svgwidth{.8\columnwidth}
-		\includegraphics[width=0.8\columnwidth]{findWorkingRegion.png} 
+		\includegraphics[width=0.7\columnwidth]{findWorkingRegion.png} 
 		\caption{Working region.}
 		\label{fig:workingRegion}
 	\end{figure}
@@ -123,75 +130,97 @@ escapeinside={\%*}{*)}, % if you want to add a comment within your code
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Sampling time}
 \begin{itemize}
-    \item In the experiment, we chose $Ts = 0.002s$ as sampling time.
+    \item In the experiment, we chose $Ts = 2ms$ as sampling time.
     \item Motivation for sampling time:
-    \par Fig.~\ref{fig:samplingTime} is obtained with the sampling time of $0.001s$, and we can see the rise time is about $13ms$, which means there are about 13 points in one rise time. According to the requirement of ``the sampling time is set to give around four to ten samples per rise time'' in the lab description, we choose $2ms$ as sampling time so that there will be 6 to 7 samples per rise time.
-    \item Plot of step responses yielding sampling time:
+    \par Fig.~\ref{fig:samplingTime} is obtained with the sampling time of $1ms$, and we can see the rise time is about $13ms$, which means there are about 13 points in one rise time. According to the requirement of ``the sampling time is set to give around four to ten samples per rise time'' in the lab description, we choose $2ms$ as sampling time so that there will be 6 to 7 samples per rise time.
+    \item Plot of step responses yielding sampling time is shown in Fig.\ref{fig:samplingTime}.
     \begin{figure}[h]
 		\footnotesize
 		\centering 
 		%\def\svgwidth{.8\columnwidth}
-		\includegraphics[width=0.8\columnwidth]{findSamplingTime.png} 
-		\caption{Working region.}
+		\includegraphics[width=0.7\columnwidth]{findSamplingTime.png} 
+		\caption{Step Response.}
 		\label{fig:samplingTime}
 	\end{figure}
 \end{itemize}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
+\begin{figure}[h]
+		\footnotesize
+		\centering
+		%\def\svgwidth{.8\columnwidth}
+		\includegraphics[width=0.7\columnwidth]{whiteNoiseSpectrum.eps} 
+		\caption{Spectrum of white noise.}
+		\label{fig:whiteNoiseSpectrum}
+	\end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Input signals}
 \begin{itemize}
     \item The binary random signal we choose have the similar output spectrum as the one of the white noises, which can be seen from Fig.~\ref{fig:binarySpectrum} and Fig.~\ref{fig:whiteNoiseSpectrum}.
-    \begin{figure}[h]
-		\footnotesize
-		\centering
-		%\def\svgwidth{.8\columnwidth}
-		\includegraphics[width=0.8\columnwidth]{whiteNoiseSpectrum.eps} 
-		\caption{Working region.}
-		\label{fig:whiteNoiseSpectrum}
-	\end{figure}
-    \item motivation for chosen input signals.
+    \item Motivation for chosen input signals:
+    \par Comparing Fig.~\ref{fig:binarySpectrum} and Fig.~\ref{fig:whiteNoiseSpectrum}, when $\alpha=0.25$, the spectrum of binary random signal is simialr to the spectrum of white noise.
 \end{itemize}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Estimation and validation data}
-\begin{itemize}
-    \item Information about the amount of data used for identification and validation:
+\par Information about the amount of data used for identification and validation:
     \begin{table}[h]
 	    \footnotesize
     	\centering
     	\caption{Data used for identification and validation.}
     	\label{table:data}
-    	\begin{tabular}{lccc}
+    	\begin{tabular}{lcccc}
     	\hline
-    	Input signal & Value (A) & Estimation (s) & Validation (s) \\
+    	Input signal & Value (A) & Amount of data & Estimation (s) & Validation (s) \\
     	\hline
-    	Uniform white noise & [1.5, 3.6] & [0, 10] & [10, 20] \\
-    	Binary random signal with $\alpha = 0.25$ & [1.5, 3.6] & [0, 10] & [10, 20] \\
+    	Uniform white noise & [2, 3] & 10000 & [0, 10] & [10, 20] \\
+    	Binary random signal with $\alpha = 0.25$ & [2, 3] & 10000 & [0, 10] & [10, 20] \\
     	\hline
     	\end{tabular}
     \end{table}
-\end{itemize}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Models}
+\subsection{Model Description}
 \begin{itemize}
-    \item descriptions of model structures used. (You should use more than one structure.)
-    \item motivation for choice of model order for each model structure.
-    \item plots of Bode diagrams, poles and zeros.
-    \item analysis/interpretations of plots.
+	\item ARX model: $A(q) y[t] = B(q) u[k] + e[k]$, performs a filtering on both input and error with $\frac{1}{A}$ and adjust the transform function with B.
+    \item ARMAX model: $A(q) y[t] = B(q) u[k] + C(q) e[k]$, is more generalized than ARX model with error being adjusted with C.
+    \item BJ model: $y[k] = \frac{B(q)}{F(q)} u[k] + \frac{C(q)}{D(q)} e[k]$, includes all special cases.
+\end{itemize}
+\subsection{Motivation of Model Orders}
+\begin{itemize}
+\item ARX model: As mentioned in the ``Preparation task'' section, ARX(4 3 5) is first chosen for both white noise and binary random signal. In the case of white noise, it performs well enough. In the case of binary random signal, ARX(5 3 5) is chosen for obvious performance improvement.
+\item ARMAX model: Based on ARX model, we try different values on $n_{c}$ and finally choose ARMAX(4 3 4 5) since performance drops when $n_{c} > 4$. For same reason, we choose ARMAX(5 3 2 5) for binary random signal.
+\item BJ model: Based on ARMAX model, we get BJ(3 4 4 4 5) for white noise and BJ(3 2 5 5 5) for binary random signal since we don't need to change the order for each polynomial in each transform function.
+\end{itemize}
+\subsection{White Noise Signal Identification}
+
+\subsubsection{Plots and Analysis} % Bode diagrams, poles and zeros.
+\subsubsection{Validation and Correlation Analysis}
+\subsection{Binary Random Signal Identification}
+\subsubsection{Plots and Analysis} % Bode diagrams, poles and zeros.
+\subsubsection{Validation and Correlation Analysis}
+\subsection{Ranking and Comparison}
+\begin{itemize}
    \item validation performed with simulation (\texttt{compare} with \texttt{M=inf}) and correlation analysis (\texttt{resid}).
    \item analysis/interpretations of validation and correlation analysis.
    \item a comparison between the accuracy of models obtained with different input signals (binary random signals v/s uniformly distributed white noise)
-   \item  a ranking of estimated models with respect to how well they describe the process, along with a rigorous motivation of chosen ranking. (Compare the analysis of plots, validation and correlation analysis for the different models.)
+   \item A ranking of estimated models with respect to how well they describe the process, along with a rigorous motivation of chosen ranking. (Compare the analysis of plots, validation and correlation analysis for the different models.)
+	\begin{table}[h]
+		\footnotesize
+		\centering
+		\caption{aa}
+		\label{table:}
+		\begin{tabular}{c}
+		
+		\end{tabular}
+	\end{table}
 \end{itemize}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \newpage
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-{\bf Note that the report is not in the format of a conference or journal paper. However, the language should be correct, concise and understandable. The figures should be clear, have captions, labels and be referenced in the text. All equations should be punctuated appropriately. (Equations are considered as part of sentences and should be treated accordingly.) All introduced symbols must be defined.}
 \section*{Attachments}
 	\label{matlabCode}
     \lstinputlisting{generateBinarySignal.m}
