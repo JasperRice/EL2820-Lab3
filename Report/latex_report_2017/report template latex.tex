@@ -68,7 +68,7 @@ escapeinside={\%*}{*)}, % if you want to add a comment within your code
 		\dot{z} &= a \\
 		\dot{y} &= b
 	\end{align*}
-	\item Suggestion for a suitable model order for a linear model (based on a linearization of the model) ?????:
+	\item Suggestion for a suitable model order for a linear model:
 	\par In stationarity, we have:
 	\begin{align*}
 		x &= \begin{bmatrix} a \\ b \\ z \\ y \end{bmatrix} \qquad \dot{x} = \begin{bmatrix} \dot{a} \\ \dot{b} \\ \dot{z} \\ \dot{y} \end{bmatrix} = 0 = \begin{bmatrix} f_{1}(a, b, z, y, I_{0}) \\ \vdots \\ f_{4}(a, b, z, y, I_{0}) \end{bmatrix}
@@ -76,7 +76,7 @@ escapeinside={\%*}{*)}, % if you want to add a comment within your code
 	\par The linearized system is given by:
 	\begin{align*}
 		\dot{X} &= A X + B I(t) \\
-		A &= \left. \begin{bmatrix} \frac{\partial f_{1}}{\partial a} & \cdots & \frac{\partial f_{1}}{\partial y} \\ \vdots & \ddots & \vdots \\ \frac{\partial f_{4}}{\partial a} & \cdots & \frac{\partial f_{4}}{\partial y} \end{bmatrix} \right|_{a = a^{0}, b = b^{0}, z = z^{0}, y = y^{0}, I = I_{0}} = \begin{bmatrix} \frac{\gamma}{m} & 0 & - \frac{4 C}{(y^{0} - z^{0})^{5}} - \frac{6 K I^{2}}{{z^{0}}^{7}} & \frac{4 C}{(y^{0} - z^{0})^{5}} \\ 0 & \frac{\gamma}{m} & \frac{4 C}{(y^{0} - z^{0})^{5}} - \frac{6 K I^{2}}{{z^{0}}^{7}} & - \frac{4 C}{(y^{0} - z^{0})^{5}} \\ 1 & 0 & 0 & 0 \\ 0 & 1 & 0 & 0 \end{bmatrix} \\ 
+		A &= \left. \begin{bmatrix} \frac{\partial f_{1}}{\partial a} & \cdots & \frac{\partial f_{1}}{\partial y} \\ \vdots & \ddots & \vdots \\ \frac{\partial f_{4}}{\partial a} & \cdots & \frac{\partial f_{4}}{\partial y} \end{bmatrix} \right|_{a = a^{0}, b = b^{0}, z = z^{0}, y = y^{0}, I = I_{0}} = \begin{bmatrix} \frac{\gamma}{m} & 0 & - \frac{4 C}{(y^{0} - z^{0})^{5}} - \frac{6 K I^{2}}{{z^{0}}^{7}} & \frac{4 C}{(y^{0} - z^{0})^{5}} \\ 0 & \frac{\gamma}{m} & \frac{4 C}{(y^{0} - z^{0})^{5}} & - \frac{4 C}{(y^{0} - z^{0})^{5}} + \frac{6 K I^{2}}{{y^{0}}^{7}} \\ 1 & 0 & 0 & 0 \\ 0 & 1 & 0 & 0 \end{bmatrix} \\ 
 		B &= \left. \begin{bmatrix} \frac{\partial f_{1}}{\partial I} \\ \vdots \\ \frac{\partial f_{4}}{\partial I} \end{bmatrix} \right|_{a = a^{0}, b = b^{0}, z = z^{0}, y = y^{0}, I = I_{0}} = \begin{bmatrix} \frac{2 K I}{{z^{0}}^{6}} \\ - \frac{2 K I}{{z^{0}}^{6}} \\ 0 \\ 0 \end{bmatrix}
 	\end{align*}
     \item Motivation for suggested model order:
@@ -87,7 +87,7 @@ escapeinside={\%*}{*)}, % if you want to add a comment within your code
 		\footnotesize
 		\centering 
 		%\def\svgwidth{.8\columnwidth}
-		\includegraphics[width=\columnwidth]{binarySpectrum.eps} 
+		\includegraphics[width=0.8\columnwidth]{binarySpectrum.eps} 
 		\caption{Spectrum of binary random signal.}
 		\label{fig:binarySpectrum}
 	\end{figure}
@@ -105,7 +105,7 @@ escapeinside={\%*}{*)}, % if you want to add a comment within your code
 		\footnotesize
 		\centering 
 		%\def\svgwidth{.8\columnwidth}
-		\includegraphics[width=\columnwidth]{findWorkingRegion.png} 
+		\includegraphics[width=0.8\columnwidth]{findWorkingRegion.png} 
 		\caption{Working region.}
 		\label{fig:workingRegion}
 	\end{figure}
@@ -131,7 +131,7 @@ escapeinside={\%*}{*)}, % if you want to add a comment within your code
 		\footnotesize
 		\centering 
 		%\def\svgwidth{.8\columnwidth}
-		\includegraphics[width=\columnwidth]{findSamplingTime.png} 
+		\includegraphics[width=0.8\columnwidth]{findSamplingTime.png} 
 		\caption{Working region.}
 		\label{fig:samplingTime}
 	\end{figure}
@@ -140,14 +140,13 @@ escapeinside={\%*}{*)}, % if you want to add a comment within your code
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Input signals}
-This section should include:
 \begin{itemize}
-    \item The binary random signal we choose have the similar output spectrum as the one of the white noises, which can be seen from Fig.~\ref{fig:binarySpectrum} and Fig~\ref{•}.
+    \item The binary random signal we choose have the similar output spectrum as the one of the white noises, which can be seen from Fig.~\ref{fig:binarySpectrum} and Fig.~\ref{fig:whiteNoiseSpectrum}.
     \begin{figure}[h]
 		\footnotesize
-		\centering 
+		\centering
 		%\def\svgwidth{.8\columnwidth}
-		\includegraphics[width=\columnwidth]{findSamplingTime.png} 
+		\includegraphics[width=0.8\columnwidth]{whiteNoiseSpectrum.eps} 
 		\caption{Working region.}
 		\label{fig:whiteNoiseSpectrum}
 	\end{figure}
@@ -157,15 +156,27 @@ This section should include:
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Estimation and validation data}
-This section should include:
 \begin{itemize}
-    \item information about the amount of data used for identification and validation.
+    \item Information about the amount of data used for identification and validation:
+    \begin{table}[h]
+	    \footnotesize
+    	\centering
+    	\caption{Data used for identification and validation.}
+    	\label{table:data}
+    	\begin{tabular}{lccc}
+    	\hline
+    	Input signal & Value (A) & Estimation (s) & Validation (s) \\
+    	\hline
+    	Uniform white noise & [1.5, 3.6] & [0, 10] & [10, 20] \\
+    	Binary random signal with $\alpha = 0.25$ & [1.5, 3.6] & [0, 10] & [10, 20] \\
+    	\hline
+    	\end{tabular}
+    \end{table}
 \end{itemize}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Models}
-This section should include:
 \begin{itemize}
     \item descriptions of model structures used. (You should use more than one structure.)
     \item motivation for choice of model order for each model structure.
