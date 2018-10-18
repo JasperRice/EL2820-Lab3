@@ -94,9 +94,37 @@ escapeinside={\%*}{*)}, % if you want to add a comment within your code
 		\footnotesize
 		\centering 
 		%\def\svgwidth{.8\columnwidth}
-		\includegraphics[width=0.7\columnwidth]{spectrumAlpha.eps} 
+		\begin{subfigure}[t]{.49\linewidth}
+		\includegraphics[width=\columnwidth]{spectrumAlpha.eps} 
 		\caption{Spectrum of binary random signal.}
 		\label{fig:binarySpectrum}
+		\end{subfigure}
+		\begin{subfigure}[t]{.49\linewidth}
+		%\def\svgwidth{.8\columnwidth}
+		\includegraphics[width=\columnwidth]{whiteNoiseSpectrum.eps} 
+		\caption{Spectrum of white noise.}
+		\label{fig:whiteNoiseSpectrum}
+		\end{subfigure}
+		\caption{Plot of spectrum.}
+		\label{fig:spectrum}
+	\end{figure}	
+	\begin{figure}[ht]	
+		\begin{subfigure}[t]{.49\linewidth}
+		\footnotesize
+		\centering 
+		%\def\svgwidth{.8\columnwidth}
+		\includegraphics[width=\columnwidth]{findWorkingRegion.png} 
+		\caption{Working region.}
+		\label{fig:workingRegion}
+		\end{subfigure}
+		\begin{subfigure}[t]{.49\linewidth}
+		%\def\svgwidth{.8\columnwidth}
+		\includegraphics[width=\columnwidth]{findSamplingTime.png} 
+		\caption{Step Response.}
+		\label{fig:samplingTime}
+		\end{subfigure}
+		\caption{Working region and sampling time.}
+		\label{fig:workingRegionAndSamplingTime}
 	\end{figure}
 \end{itemize}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -108,14 +136,6 @@ escapeinside={\%*}{*)}, % if you want to add a comment within your code
     \item Motivation for working region:
     \par From Fig.~\ref{fig:workingRegion}, we can see that when $u \in [1.5A, 3.6A]$, the plot have linearity.
     \item Plot for illustrating working region is shown in Fig.~\ref{fig:workingRegion}.
-	\begin{figure}[ht]
-		\footnotesize
-		\centering 
-		%\def\svgwidth{.8\columnwidth}
-		\includegraphics[width=0.7\columnwidth]{findWorkingRegion.png} 
-		\caption{Working region.}
-		\label{fig:workingRegion}
-	\end{figure}
 \end{itemize}
 %	\begin{figure}[ht]
 %		\footnotesize
@@ -134,24 +154,9 @@ escapeinside={\%*}{*)}, % if you want to add a comment within your code
     \item Motivation for sampling time:
     \par Fig.~\ref{fig:samplingTime} is obtained with the sampling time of $1ms$, and we can see the rise time is about $13ms$, which means there are about 13 points in one rise time. According to the requirement of ``the sampling time is set to give around four to ten samples per rise time'' in the lab description, we choose $2ms$ as sampling time so that there will be 6 to 7 samples per rise time.
     \item Plot of step responses yielding sampling time is shown in Fig.\ref{fig:samplingTime}.
-    \begin{figure}[ht]
-		\footnotesize
-		\centering 
-		%\def\svgwidth{.8\columnwidth}
-		\includegraphics[width=0.7\columnwidth]{findSamplingTime.png} 
-		\caption{Step Response.}
-		\label{fig:samplingTime}
-	\end{figure}
 \end{itemize}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{figure}[ht]
-		\footnotesize
-		\centering
-		%\def\svgwidth{.8\columnwidth}
-		\includegraphics[width=0.7\columnwidth]{whiteNoiseSpectrum.eps} 
-		\caption{Spectrum of white noise.}
-		\label{fig:whiteNoiseSpectrum}
-	\end{figure}
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Input signals}
 \begin{itemize}
@@ -196,7 +201,7 @@ escapeinside={\%*}{*)}, % if you want to add a comment within your code
 \end{itemize}
 \subsection{White Noise Signal Validation}
 \par In this part, we are going to use white noise signal 2 as the validation data since the process of white noise signal 1 is similar and the performance of white noise signal 2 is better.
-\par The best and worst models in validating with binary random signal are compared in Fig.~\ref{fig:whiteNoiseCompare}, where the blue curves is the best model BJ(3 4 4 4 5) estimated from white noise 1 and the red curves is the worst model ARX(5 3 5) estimated from binary random signal.
+\par The best and worst models in validating with binary random signal are compared in Fig.~\ref{fig:whiteNoiseCompare}, where the red curves is the best model BJ(3 4 4 4 5) estimated from white noise 1 and the blue curves is the worst model ARX(5 3 5) estimated from binary random signal.
 	\begin{figure}[ht]
 		\footnotesize
 		\centering
@@ -313,6 +318,21 @@ escapeinside={\%*}{*)}, % if you want to add a comment within your code
 		\hline
 		\end{tabular}
 	\end{table}
+\par We also use 
+	\begin{figure}[ht]
+		\footnotesize
+		\centering
+		\begin{subfigure}[t]{.45\linewidth}
+		\centering\includegraphics[width=0.8\linewidth]{binaryCompareToInf.eps}
+		\caption{Binary random signal.}
+		\end{subfigure}
+		\begin{subfigure}[t]{.45\linewidth}
+		\centering\includegraphics[width=0.8\linewidth]{whiteNoiseCompareToInf.eps}
+		\caption{White noise.}
+		\end{subfigure}
+  		\caption{Comparison the best and worst models with spectrum model (M=inf).}
+  		\label{fig:spectrumModelCompare}
+  	\end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newpage
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
