@@ -16,10 +16,11 @@
 \flushbottom
 
 %%%%% My packages
-\usepackage{listings}
 \usepackage{amstext}
 \usepackage{color, xcolor}
 \usepackage{diagbox, tabularx}
+\usepackage{listings}
+\usepackage{graphicx, multicol, multirow, subcaption}
 %\usepackage{amsmath,mathtools,amssymb,amsfonts,dsfont,cancel} %Math Package
 %%%%%
 
@@ -87,13 +88,13 @@ escapeinside={\%*}{*)}, % if you want to add a comment within your code
 		&= \frac{N^{a}_{3}(q)}{D^{a}_{4}(q)} + \frac{N^{b}_{0}(q)}{D^{b}_{4}(q)}
 	\end{align}
 	\par Approximating $G(q)$ with $D^{a}_{4}(q) = D^{b}_{4}(q)$, the trasfer function would be $G(q) = \frac{N_{3}(q)}{D_{4}(q)}$. Plus, since our sampling time would be $2ms$ and the delay time would be $9ms$ in our experiment, base on the equation $n_{k} = \lfloor\frac{\tau}{h}\rfloor + 1$ from the lecture slides, we get $n_{k} = 5$. In all, our suggestion of the model order for ARX model could be ARX(4 3 5). Then the ARMAX and BJ models can be modified accordingly.
-    \item \textsc{Matlab} codes for the required functions are attached in the page ~\pageref{matlabCode}.
+    \item \textsc{Matlab} codes for the required functions are attached in the section ~\ref{matlabCode}.
     \item Plot for the spectrum of the binary random signal for the required values of $\alpha$ is shown in Fig.~\ref{fig:binarySpectrum}.
-	\begin{figure}[h]
+	\begin{figure}[ht]
 		\footnotesize
 		\centering 
 		%\def\svgwidth{.8\columnwidth}
-		\includegraphics[width=0.7\columnwidth]{binarySpectrum.eps} 
+		\includegraphics[width=0.7\columnwidth]{spectrumAlpha.eps} 
 		\caption{Spectrum of binary random signal.}
 		\label{fig:binarySpectrum}
 	\end{figure}
@@ -107,7 +108,7 @@ escapeinside={\%*}{*)}, % if you want to add a comment within your code
     \item Motivation for working region:
     \par From Fig.~\ref{fig:workingRegion}, we can see that when $u \in [1.5A, 3.6A]$, the plot have linearity.
     \item Plot for illustrating working region is shown in Fig.~\ref{fig:workingRegion}.
-	\begin{figure}[h]
+	\begin{figure}[ht]
 		\footnotesize
 		\centering 
 		%\def\svgwidth{.8\columnwidth}
@@ -133,7 +134,7 @@ escapeinside={\%*}{*)}, % if you want to add a comment within your code
     \item Motivation for sampling time:
     \par Fig.~\ref{fig:samplingTime} is obtained with the sampling time of $1ms$, and we can see the rise time is about $13ms$, which means there are about 13 points in one rise time. According to the requirement of ``the sampling time is set to give around four to ten samples per rise time'' in the lab description, we choose $2ms$ as sampling time so that there will be 6 to 7 samples per rise time.
     \item Plot of step responses yielding sampling time is shown in Fig.\ref{fig:samplingTime}.
-    \begin{figure}[h]
+    \begin{figure}[ht]
 		\footnotesize
 		\centering 
 		%\def\svgwidth{.8\columnwidth}
@@ -143,7 +144,7 @@ escapeinside={\%*}{*)}, % if you want to add a comment within your code
 	\end{figure}
 \end{itemize}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{figure}[h]
+\begin{figure}[ht]
 		\footnotesize
 		\centering
 		%\def\svgwidth{.8\columnwidth}
@@ -163,7 +164,7 @@ escapeinside={\%*}{*)}, % if you want to add a comment within your code
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Estimation and validation data}
 \par Information about the amount of data used for identification and validation:
-    \begin{table}[h]
+    \begin{table}[ht]
 	    \footnotesize
     	\centering
     	\caption{Data used for identification and validation.}
@@ -193,20 +194,83 @@ escapeinside={\%*}{*)}, % if you want to add a comment within your code
 \item ARMAX model: Based on ARX model, we try different values on $n_{c}$ and finally choose ARMAX(4 3 4 5) since performance drops when $n_{c} > 4$. For same reason, we choose ARMAX(5 3 2 5) for binary random signal.
 \item BJ model: Based on ARMAX model, we get BJ(3 4 4 4 5) for white noise and BJ(3 2 5 5 5) for binary random signal since we don't need to change the order for each polynomial in each transform function.
 \end{itemize}
-\subsection{White Noise Signal Identification}
-
-\subsubsection{Plots and Analysis} % Bode diagrams, poles and zeros.
-\subsubsection{Validation and Correlation Analysis}
-\subsection{Binary Random Signal Identification}
-\subsubsection{Plots and Analysis} % Bode diagrams, poles and zeros.
-\subsubsection{Validation and Correlation Analysis}
+\subsection{White Noise Signal Validation}
+\par In this part, we are going to use white noise signal 2 as the validation data since the process of white noise signal 1 is similar and the performance of white noise signal 2 is better.
+\par The best and worst models in validating with binary random signal are compared in Fig.~\ref{fig:whiteNoiseCompare}, where the blue curves is the best model BJ(3 4 4 4 5) estimated from white noise 1 and the red curves is the worst model ARX(5 3 5) estimated from binary random signal.
+	\begin{figure}[ht]
+		\footnotesize
+		\centering
+		\begin{subfigure}[t]{.32\linewidth}
+		\centering\includegraphics[width=\linewidth]{whiteNoiseFrequencyResponse.eps}
+		\caption{Bode plot.}
+		\end{subfigure}
+		\begin{subfigure}[t]{.32\linewidth}
+		\centering\includegraphics[width=\linewidth]{whiteNoisePolesZeros.eps}
+		\caption{Poles and zeros.}
+		\end{subfigure}
+		\begin{subfigure}[t]{.32\linewidth}
+		\centering\includegraphics[width=\linewidth]{whiteNoiseResiduals.eps}
+		\caption{Correlation.}
+  		\end{subfigure}
+  		\caption{Comparison between the best and worst models using white noise as validation data.}
+  		\label{fig:whiteNoiseCompare}
+  	\end{figure}
+\par According to Bode plot in Fig.~\ref{fig:whiteNoiseCompare}(a), there is a resonance at around frequency 100 rad/s. By comparison, BJ(3 4 4 4 5) has higher gains around resonance frequency than ARX(5 3 5). Also, according to the poles and zeros in Fig.~\ref{fig:whiteNoiseCompare}(b), poles are in the unit circle and both models have effective pairs of conjugate poles that contribute to the peak in Bode plot.
+	\begin{table}[ht]
+		\footnotesize
+		\centering
+		\caption{1-step Prediction of Validation}
+		\label{table:whiteNoiseValidation}
+		\begin{tabular}{lll}
+			\hline
+			Model & Binary Signal Fit & \textbf{White Noise 2 Fit} \\
+			\hline
+			BJ(3 4 4 4 5) WN1 & 97.25\% & 92.15\% \\
+			ARX(5 3 5) BR & 98.36\% & 88.83\% \\
+			\hline
+		\end{tabular}
+	\end{table}
+\par Base on the 1-step prediction, both signal performs perfect on random binary validation data. But the ARX(5 3 5) model preforms not so good with white noise 2 data which can also be seen from Fig.\ref{fig:whiteNoiseCompare}(c).
+\subsection{Binary Random Signal Validation}
+\par The best and worst models in validating with binary random signal are compared in Fig.~\ref{fig:binaryCompare}, where the red curves is the best model BJ(3 2 5 5 5) estimated from binary random signal and the blue curves is the worst model BJ(3 4 4 4 5) estimated from WN2.
+	\begin{figure}[ht]
+		\footnotesize
+		\centering
+		\begin{subfigure}[t]{.32\linewidth}
+		\centering\includegraphics[width=\linewidth]{binaryFrequencyResponse.eps}
+		\caption{Bode plot.}
+		\end{subfigure}
+		\begin{subfigure}[t]{.32\linewidth}
+		\centering\includegraphics[width=\linewidth]{binaryPolesZeros.eps}
+		\caption{Poles and zeros.}
+		\end{subfigure}
+		\begin{subfigure}[t]{.32\linewidth}
+		\centering\includegraphics[width=\linewidth]{binaryResiduals.eps}
+		\caption{Correlation.}
+  		\end{subfigure}
+  		\caption{Comparison between the best and worst models using binary random signal as validation data.}
+  		\label{fig:binaryCompare}
+  	\end{figure}
+\par According to Bode plot in Fig.~\ref{fig:binaryCompare}(a), there is a resonance at around frequency 100 rad/s. As the input binary random signal focuses on low frequencies, the variance is relatively small around the peak frequency and relatively big. By comparison, BJ(3 2 5 5 5) estimated from binary random signal has higher gains around resonance frequency than BJ(3 4 4 4 5) estimated from WN2.
+\par According to poles and zeros in Fig.~\ref{fig:binaryCompare}(b), the poles of both models are both in the unit circle. Plus, both models have effective pairs of conjugate poles that contribute to the peak in Bode plot.
+	\begin{table}[ht]
+		\footnotesize
+		\centering
+		\caption{1-step Prediction of Validation}
+		\label{table:binaryValidation}
+		\begin{tabular}{lll}
+			\hline
+			Model & \textbf{Binary Signal Fit} & White Noise 2 Fit \\
+			\hline
+			BJ(3 2 5 5 5) BR & 98.54\% & 90.38\% \\
+			BJ(3 4 4 4 5) WN2 & 95.11\% & 91.73\% \\
+			\hline
+		\end{tabular}
+	\end{table}
+\par Base on the 1-step prediction, both signal performs perfect on random binary validation data and also good with on white noise validation data. However, it is clear according to correlation plots in Fig.~\ref{fig:binaryCompare}(c), most correlation of BJ(3 2 5 5 5) is inside the confidence region while there is much outlier in the case of BJ(3 4 4 4 5). Therefore, BJ(3 4 4 4 5) estimated from WN2 is over fitted to binary random data signal.
 \subsection{Ranking and Comparison}
-\begin{itemize}
-   \item validation performed with simulation (\texttt{compare} with \texttt{M=inf}) and correlation analysis (\texttt{resid}).
-   \item analysis/interpretations of validation and correlation analysis.
-   \item a comparison between the accuracy of models obtained with different input signals (binary random signals v/s uniformly distributed white noise)
-   \item A ranking of estimated models with respect to how well they describe the process, along with a rigorous motivation of chosen ranking. (Compare the analysis of plots, validation and correlation analysis for the different models.)
-	\begin{table}[h]
+\par According to validation result shown in Tab.\ref{table:whiteNoiseValidation} and Tab.\ref{table:binaryValidation}, models estimated from binary random signal has relatively higher accuracy than with white noise.
+	\begin{table}[ht]
 		\footnotesize
 		\centering
 		\caption{Ranking of the Estimated Models with 1-step Prediction}
@@ -217,19 +281,42 @@ escapeinside={\%*}{*)}, % if you want to add a comment within your code
 		\hline
 		Rank & White Noise 1 & White Noise 2 & Binary Random Signal\\
 		\hline
-		1 & ARMAX(4 3 4 5) WH2: 89.33\% & BJ(3 4 4 4 5) WH1: 92.15\% & BJ(3 2 5 5 5) BR: 98.54\% \\
-		2 & BJ(3 4 4 4 5) WH2: 89.11\% & ARMAX(4 3 4 5) WH1: 91.90\% & ARMAX(5 3 2 5) BR: 98.53\% \\
-		3 & ARX(4 3 5) WH2: 88.91\% & BJ(3 4 4 4 5) WH2: 91.73\% & ARX(5 3 5) BR: 98.36\%\\
-		4 & BJ(3 4 4 4 5) WH1: 88.80\% & ARMAX WH2: 91.71\% & ARMAX(4 3 4 5) WH1: 97.93\%\\
+		1 & ARMAX(4 3 4 5) WN2: 89.33\% & BJ(3 4 4 4 5) WN1: 92.15\% & BJ(3 2 5 5 5) BR: 98.54\% \\
+		2 & BJ(3 4 4 4 5) WN2: 89.11\% & ARMAX(4 3 4 5) WN1: 91.90\% & ARMAX(5 3 2 5) BR: 98.53\% \\
+		3 & ARX(4 3 5) WN2: 88.91\% & BJ(3 4 4 4 5) WN2: 91.73\% & ARX(5 3 5) BR: 98.36\%\\
+		4 & BJ(3 4 4 4 5) WN1: 88.80\% & ARMAX WN2: 91.71\% & ARMAX(4 3 4 5) WN1: 97.93\%\\
 		\hline
 		\end{tabular}
 	\end{table}
-\end{itemize}
+	\begin{table}[ht]
+		\footnotesize
+		\centering
+		\caption{Accuracy comparison of models with different input signals (binary random signal v.s. uniformly distributed white noise).}
+		\label{table:accuracyComparison}
+		\begin{tabular}{|l|l|c|c|}
+		\hline
+		& \multicolumn{3}{c|}{Input Validation Signal} \\
+		\hline
+		Identification data	& Model & White Noise 2 (\%) & Binary Random Signal (\%) \\
+		\hline
+		\multirow{3}{*}{White Noise 1} & ARX(4 3 5) & 88.23 & 97.31 \\
+		& ARMAX(4 3 4 5) & 88.26 & 97.93 \\
+		& BJ(3 4 4 4 5) & 88.8 & 97.25 \\
+		\hline
+		\multirow{3}{*}{White Noise 2} & ARX(4 3 5) & 88.91 & 96.38 \\
+		& ARMAX(4 3 4 5) & 89.33 & 96.85 \\
+		& BJ(3 4 4 4 5) & 89.11 & 95.11 \\
+		\hline
+		\multirow{3}{*}{Binary Random Signal} & ARX(5 3 5) & 84.85 & 98.36 \\
+		& ARMAX(5 3 2 5) & 86.48 & 98.53 \\
+		& BJ(3 2 5 5 5) & 86.6 & 98.54 \\
+		\hline
+		\end{tabular}
+	\end{table}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
 \newpage
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section*{Attachments}
+\section{Attachment}
 	\label{matlabCode}
     \lstinputlisting{generateBinarySignal.m}
 	\lstinputlisting{getAverage.m}

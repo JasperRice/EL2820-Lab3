@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2018.10.12)  18 OCT 2018 19:36
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2018.10.12)  18 OCT 2018 23:32
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -2875,16 +2875,16 @@ and I'll forget about whatever was undefined.
 ! Misplaced \omit.
 \multispan ->\omit 
                    \@multispan 
-l.75 ...multicolumn{3}{c}{\rule{0mm}{5mm}\dotfill}
-                                                  &\multicolumn{2}{|c}{\rule...
+l.74     \multicolumn{5}{c}{\dotfill}
+                                     \\
 I expect to see \omit only after tab marks or the \cr of
 an alignment. Proceed, and I'll ignore this case.
 
 ! Misplaced \span.
 \sp@n ->\span 
               \omit \advance \@multicnt \m@ne 
-l.75 ...multicolumn{3}{c}{\rule{0mm}{5mm}\dotfill}
-                                                  &\multicolumn{2}{|c}{\rule...
+l.74     \multicolumn{5}{c}{\dotfill}
+                                     \\
 I can't figure out why you would want to use a tab mark
 or \cr or \span just now. If something like a right brace
 up above has ended a previous alignment prematurely,
@@ -2894,16 +2894,16 @@ might try typing `S' now just to see what is salvageable.
 ! Misplaced \omit.
 \sp@n ->\span \omit 
                     \advance \@multicnt \m@ne 
-l.75 ...multicolumn{3}{c}{\rule{0mm}{5mm}\dotfill}
-                                                  &\multicolumn{2}{|c}{\rule...
+l.74     \multicolumn{5}{c}{\dotfill}
+                                     \\
 I expect to see \omit only after tab marks or the \cr of
 an alignment. Proceed, and I'll ignore this case.
 
 ! Misplaced \span.
 \sp@n ->\span 
               \omit \advance \@multicnt \m@ne 
-l.75 ...multicolumn{3}{c}{\rule{0mm}{5mm}\dotfill}
-                                                  &\multicolumn{2}{|c}{\rule...
+l.74     \multicolumn{5}{c}{\dotfill}
+                                     \\
 I can't figure out why you would want to use a tab mark
 or \cr or \span just now. If something like a right brace
 up above has ended a previous alignment prematurely,
@@ -2913,16 +2913,54 @@ might try typing `S' now just to see what is salvageable.
 ! Misplaced \omit.
 \sp@n ->\span \omit 
                     \advance \@multicnt \m@ne 
-l.75 ...multicolumn{3}{c}{\rule{0mm}{5mm}\dotfill}
-                                                  &\multicolumn{2}{|c}{\rule...
+l.74     \multicolumn{5}{c}{\dotfill}
+                                     \\
+I expect to see \omit only after tab marks or the \cr of
+an alignment. Proceed, and I'll ignore this case.
+
+! Misplaced \span.
+\sp@n ->\span 
+              \omit \advance \@multicnt \m@ne 
+l.74     \multicolumn{5}{c}{\dotfill}
+                                     \\
+I can't figure out why you would want to use a tab mark
+or \cr or \span just now. If something like a right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced \omit.
+\sp@n ->\span \omit 
+                    \advance \@multicnt \m@ne 
+l.74     \multicolumn{5}{c}{\dotfill}
+                                     \\
+I expect to see \omit only after tab marks or the \cr of
+an alignment. Proceed, and I'll ignore this case.
+
+! Misplaced \span.
+\sp@n ->\span 
+              \omit \advance \@multicnt \m@ne 
+l.74     \multicolumn{5}{c}{\dotfill}
+                                     \\
+I can't figure out why you would want to use a tab mark
+or \cr or \span just now. If something like a right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced \omit.
+\sp@n ->\span \omit 
+                    \advance \@multicnt \m@ne 
+l.74     \multicolumn{5}{c}{\dotfill}
+                                     \\
 I expect to see \omit only after tab marks or the \cr of
 an alignment. Proceed, and I'll ignore this case.
 
 ! Undefined control sequence.
 <argument> ...nextchar \ifcase \@chclass \@classz 
                                                   \or \@classi \or \@classii...
-l.75 ...multicolumn{3}{c}{\rule{0mm}{5mm}\dotfill}
-                                                  &\multicolumn{2}{|c}{\rule...
+l.74     \multicolumn{5}{c}{\dotfill}
+                                     \\
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
@@ -2932,67 +2970,8 @@ and I'll forget about whatever was undefined.
 ! Undefined control sequence.
 \@mkpream ...hclass }\ifcase \@lastchclass \@acol 
                                                   \or \or \@preamerr \@ne \o...
-l.75 ...multicolumn{3}{c}{\rule{0mm}{5mm}\dotfill}
-                                                  &\multicolumn{2}{|c}{\rule...
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-! Misplaced alignment tab character &.
-l.75 ...ulticolumn{3}{c}{\rule{0mm}{5mm}\dotfill}&
-                                                  \multicolumn{2}{|c}{\rule{...
-I can't figure out why you would want to use a tab mark
-here. If you just want an ampersand, the remedy is
-simple: Just type `I\&' now. But if some right brace
-up above has ended a previous alignment prematurely,
-you're probably due for more error messages, and you
-might try typing `S' now just to see what is salvageable.
-
-! Misplaced \omit.
-\multispan ->\omit 
-                   \@multispan 
-l.75 ...ulticolumn{2}{|c}{\rule{0mm}{5mm}\dotfill}
-                                                  \\
-I expect to see \omit only after tab marks or the \cr of
-an alignment. Proceed, and I'll ignore this case.
-
-! Misplaced \span.
-\sp@n ->\span 
-              \omit \advance \@multicnt \m@ne 
-l.75 ...ulticolumn{2}{|c}{\rule{0mm}{5mm}\dotfill}
-                                                  \\
-I can't figure out why you would want to use a tab mark
-or \cr or \span just now. If something like a right brace
-up above has ended a previous alignment prematurely,
-you're probably due for more error messages, and you
-might try typing `S' now just to see what is salvageable.
-
-! Misplaced \omit.
-\sp@n ->\span \omit 
-                    \advance \@multicnt \m@ne 
-l.75 ...ulticolumn{2}{|c}{\rule{0mm}{5mm}\dotfill}
-                                                  \\
-I expect to see \omit only after tab marks or the \cr of
-an alignment. Proceed, and I'll ignore this case.
-
-! Undefined control sequence.
-<argument> ...nextchar \ifcase \@chclass \@classz 
-                                                  \or \@classi \or \@classii...
-l.75 ...ulticolumn{2}{|c}{\rule{0mm}{5mm}\dotfill}
-                                                  \\
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-! Undefined control sequence.
-\@mkpream ...hclass }\ifcase \@lastchclass \@acol 
-                                                  \or \or \@preamerr \@ne \o...
-l.75 ...ulticolumn{2}{|c}{\rule{0mm}{5mm}\dotfill}
-                                                  \\
+l.74     \multicolumn{5}{c}{\dotfill}
+                                     \\
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
