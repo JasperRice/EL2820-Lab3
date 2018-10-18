@@ -19,7 +19,7 @@
 \usepackage{listings}
 \usepackage{amstext}
 \usepackage{color, xcolor}
-\usepackage{tabularx}
+\usepackage{diagbox, tabularx}
 %\usepackage{amsmath,mathtools,amssymb,amsfonts,dsfont,cancel} %Math Package
 %%%%%
 
@@ -37,11 +37,10 @@ escapeinside={\%*}{*)}, % if you want to add a comment within your code
 \begin{titlepage}
 %%%%%%%%%%%%%%%%%WRITE NAMES AND PERSONAL IDENTITY NUMBERS WHERE SPECIFIED IN FILE grade_template_to_include_eng.tex%%%%%%%%%%
 \input{grade_template}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \end{titlepage}
 \newpage
 \pagestyle{plain}
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Preparation task}
 \begin{itemize}
@@ -210,10 +209,19 @@ escapeinside={\%*}{*)}, % if you want to add a comment within your code
 	\begin{table}[h]
 		\footnotesize
 		\centering
-		\caption{aa}
-		\label{table:}
-		\begin{tabular}{c}
-		
+		\caption{Ranking of the Estimated Models with 1-step Prediction}
+		\label{table:rank}
+		\begin{tabular}{|l|lll|}
+		\hline
+		& \multicolumn{3}{c|}{Validation Data} \\
+		\hline
+		Rank & White Noise 1 & White Noise 2 & Binary Random Signal\\
+		\hline
+		1 & ARMAX(4 3 4 5) WH2: 89.33\% & BJ(3 4 4 4 5) WH1: 92.15\% & BJ(3 2 5 5 5) BR: 98.54\% \\
+		2 & BJ(3 4 4 4 5) WH2: 89.11\% & ARMAX(4 3 4 5) WH1: 91.90\% & ARMAX(5 3 2 5) BR: 98.53\% \\
+		3 & ARX(4 3 5) WH2: 88.91\% & BJ(3 4 4 4 5) WH2: 91.73\% & ARX(5 3 5) BR: 98.36\%\\
+		4 & BJ(3 4 4 4 5) WH1: 88.80\% & ARMAX WH2: 91.71\% & ARMAX(4 3 4 5) WH1: 97.93\%\\
+		\hline
 		\end{tabular}
 	\end{table}
 \end{itemize}
